@@ -67,19 +67,12 @@ module.exports = function(eleventyConfig) {
     )
   );
 
-
-
-  // Book Notes (sorted by dateRead)
-  eleventyConfig.addCollection("booknotes", (api) => {
-    const notes = api.getFilteredByGlob("src/book-notes/*.md");
-
-    return notes.sort((a, b) => {
-      const dateA = a.data.dateRead ? DateTime.fromISO(a.data.dateRead) : DateTime.fromMillis(0);
-      const dateB = b.data.dateRead ? DateTime.fromISO(b.data.dateRead) : DateTime.fromMillis(0);
-
-      return dateB.toMillis() - dateA.toMillis();
-    });
-  });
+  // Book Notes (sorted by date)
+  eleventyConfig.addCollection("booknotes", (api) =>
+    api.getFilteredByGlob("src/book-notes/*.md").sort(
+      (a, b) => b.data.dateRead - a.data.dateRead
+    )
+  );
 
   // Paintings (sorted by date ended)
   eleventyConfig.addCollection("paintings", (api) =>
