@@ -15,8 +15,8 @@ There are three sections in each book notes page:
 If you have book recommendations → [email me]({{ '/contact/' | url }}) 📚
 
 <ul class="spaced-list">
-{% for booknotes in collections.booknotes %}
-  <li><a href="{{ booknotes.url }}">{{ booknotes.data.title }}</a> by <a href="{{ booknotes.data.authorLink }}">{{ booknotes.data.author }}</a></li>
+{% for note in collections.booknotes %}
+  <li><a href="{{ note.url }}">{{ note.data.title }}</a> by <a href="{{ note.data.authorLink }}">{{ note.data.author }}</a></li>
 {% endfor %}
 </ul>
 

@@ -67,32 +67,28 @@ module.exports = function(eleventyConfig) {
     )
   );
 
-  // Book Notes (sorted by date)
-  eleventyConfig.addCollection("booknotes", (api) =>
-    api.getFilteredByGlob("src/book-notes/*.md").sort((a, b) => {
-      const dateA = DateTime.fromISO(a.data.dateRead);
-      const dateB = DateTime.fromISO(b.data.dateRead);
+
+
+  // Book Notes (sorted by dateRead)
+  eleventyConfig.addCollection("booknotes", (api) => {
+    const notes = api.getFilteredByGlob("src/book-notes/*.md");
+
+    return notes.sort((a, b) => {
+      const dateA = a.data.dateRead ? DateTime.fromISO(a.data.dateRead) : DateTime.fromMillis(0);
+      const dateB = b.data.dateRead ? DateTime.fromISO(b.data.dateRead) : DateTime.fromMillis(0);
+
       return dateB.toMillis() - dateA.toMillis();
-    })
-  );
+    });
+  });
 
   // Paintings (sorted by date ended)
   eleventyConfig.addCollection("paintings", (api) =>
     api.getFilteredByGlob("src/paintings/*.md").sort((a, b) => {
       const dateEndedA = a.data.dateEnded ?? 0;
       const dateEndedB = b.data.dateEnded ?? 0;
-
-      // Primary sort: dateEnded
-      if (dateEndedB !== dateEndedA) {
-        return dateEndedB - dateEndedA;
+      return dateEndedB - dateEndedA;
       }
-
-      // Secondary sort: dateStarted
-      const dateStartedA = a.data.dateStarted ?? 0;
-      const dateStartedB = b.data.dateStarted ?? 0;
-      return dateStartedB - dateStartedA;
-    })
-  );
+  ));
 
   // Newsletters (sorted by date)
   eleventyConfig.addCollection("newsletters", (api) =>
@@ -160,6 +156,13 @@ module.exports = function(eleventyConfig) {
     const years = diffMs / msPerYear;
 
     return years.toFixed(1);
+  });
+
+  // Simple year format YYYY
+  eleventyConfig.addFilter("yearSimple", (date) => {
+    if (!date) return "";
+    const dt = DateTime.fromJSDate(date instanceof Date ? date : new Date(date));
+    return dt.isValid ? dt.year : "";
   });
 
   /* ---------------------------

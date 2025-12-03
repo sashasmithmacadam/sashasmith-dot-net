@@ -13,11 +13,7 @@ hidePageTitle: false
 
         <div class="painting-metadata">
             
-            <p>
-                {{ painting.data.yearStarted }}
-                {% if painting.data.yearEnded != painting.data.yearStarted %} – {{ painting.data.yearEnded }}
-                {% endif %}
-            </p>
+            <p>{{ painting.data.dateStarted }} – {{ painting.data.dateEnded | yearSimple }}</p>
 
             <p>{{ painting.data.medium }}</p>
 

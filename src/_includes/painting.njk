@@ -16,7 +16,7 @@ layout: base.njk
 
   <div class="painting-metadata">
     
-    <p>{{ dateStarted }} – {{ dateEnded }}</p>
+    <p>{{ dateStarted }} – {{ dateEnded | yearSimple }}</p>
 
     <p>{{ medium }}</p>
 
@@ -29,7 +29,7 @@ layout: base.njk
 <hr class="footer-hr">
 
 {# Pagination: previous/next based on collection #}
-{% set paintingCollection = collections.paintings | sort(attribute="dateStarted") %}
+{% set paintingCollection = collections.paintings | sort(attribute="dateEnded") %}
 
 {% set currentIndex = -1 %}
 {% for i in range(0, paintingCollection | length) %}
