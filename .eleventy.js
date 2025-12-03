@@ -53,10 +53,10 @@ module.exports = function(eleventyConfig) {
 
   // Essays (sorted by frontmatter `order`)
   eleventyConfig.addCollection("essays", (api) =>
-    api.getFilteredByGlob("src/essays/*.md").sort((b, a) => {
+    api.getFilteredByGlob("src/essays/*.md").sort((a, b) => {
       const orderA = a.data.order ?? 0;
       const orderB = b.data.order ?? 0;
-      return orderA - orderB; // ascending
+      return orderB - orderA; // ascending
     })
   );
 
@@ -70,25 +70,25 @@ module.exports = function(eleventyConfig) {
   // Book Notes (sorted by date)
   eleventyConfig.addCollection("booknotes", (api) =>
     api.getFilteredByGlob("src/book-notes/*.md").sort(
-      (a, b) => b.data.date - a.data.date
+      (a, b) => new Date(b.data.dateRead) - new Date(a.data.dateRead)
     )
   );
 
   // Paintings (sorted by year ended)
   eleventyConfig.addCollection("paintings", (api) =>
-    api.getFilteredByGlob("src/paintings/*.md").sort((b, a) => {
+    api.getFilteredByGlob("src/paintings/*.md").sort((a, b) => {
       const yearEndedA = a.data.yearEnded ?? 0;
       const yearEndedB = b.data.yearEnded ?? 0;
 
       // Primary sort: yearEnded
-      if (yearEndedA !== yearEndedB) {
-        return yearEndedA - yearEndedB;
+      if (yearEndedB !== yearEndedA) {
+        return yearEndedB - yearEndedA;
       }
 
       // Secondary sort: yearStarted
       const yearStartedA = a.data.yearStarted ?? 0;
       const yearStartedB = b.data.yearStarted ?? 0;
-      return yearStartedA - yearStartedB;
+      return yearStartedB - yearStartedA;
     })
   );
 
