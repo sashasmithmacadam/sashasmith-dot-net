@@ -69,26 +69,28 @@ module.exports = function(eleventyConfig) {
 
   // Book Notes (sorted by date)
   eleventyConfig.addCollection("booknotes", (api) =>
-    api.getFilteredByGlob("src/book-notes/*.md").sort(
-      (a, b) => new Date(b.data.dateRead) - new Date(a.data.dateRead)
-    )
+    api.getFilteredByGlob("src/book-notes/*.md").sort((a, b) => {
+      const dateA = DateTime.fromISO(a.data.dateRead);
+      const dateB = DateTime.fromISO(b.data.dateRead);
+      return dateB.toMillis() - dateA.toMillis();
+    })
   );
 
-  // Paintings (sorted by year ended)
+  // Paintings (sorted by date ended)
   eleventyConfig.addCollection("paintings", (api) =>
     api.getFilteredByGlob("src/paintings/*.md").sort((a, b) => {
-      const yearEndedA = a.data.yearEnded ?? 0;
-      const yearEndedB = b.data.yearEnded ?? 0;
+      const dateEndedA = a.data.dateEnded ?? 0;
+      const dateEndedB = b.data.dateEnded ?? 0;
 
-      // Primary sort: yearEnded
-      if (yearEndedB !== yearEndedA) {
-        return yearEndedB - yearEndedA;
+      // Primary sort: dateEnded
+      if (dateEndedB !== dateEndedA) {
+        return dateEndedB - dateEndedA;
       }
 
-      // Secondary sort: yearStarted
-      const yearStartedA = a.data.yearStarted ?? 0;
-      const yearStartedB = b.data.yearStarted ?? 0;
-      return yearStartedB - yearStartedA;
+      // Secondary sort: dateStarted
+      const dateStartedA = a.data.dateStarted ?? 0;
+      const dateStartedB = b.data.dateStarted ?? 0;
+      return dateStartedB - dateStartedA;
     })
   );
 
