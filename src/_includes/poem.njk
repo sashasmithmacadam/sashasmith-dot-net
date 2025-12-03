@@ -1,0 +1,65 @@
+---
+layout: base.njk
+---
+<h1 class="poem-title">{{ title }}</h1>
+
+
+{% if date %}
+  {% set d = date %}
+  {% set day = d.getDate() %}
+  {% if day < 10 %}{% set day = "0" ~ day %}{% endif %}
+
+  {% set month = d.getMonth() + 1 %}
+  {% if month < 10 %}{% set month = "0" ~ month %}{% endif %}
+
+  {% set year = d.getFullYear() %}
+
+  {% set hour = d.getHours() %}
+  {% if hour < 10 %}{% set hour = "0" ~ hour %}{% endif %}
+
+  {% set minute = d.getMinutes() %}
+  {% if minute < 10 %}{% set minute = "0" ~ minute %}{% endif %}
+
+  <p class="poem-date">{{ day }}/{{ month }}/{{ year }} — {{ hour }}:{{ minute }}</p>
+{% endif %}
+
+<article class="poem">
+
+    {{ content | safe }}
+
+</article>
+
+{# Pagination: previous/next based on essay collection #}
+{% set poemCollection = collections.poems | sort(attribute="date") %}
+
+{% set currentIndex = -1 %}
+{% for i in range(0, poemCollection | length) %}
+  {% if poemCollection[i].url == page.url %}
+    {% set currentIndex = i %}
+  {% endif %}
+{% endfor %}
+
+{% set previous = null %}
+{% set next = null %}
+
+{% if currentIndex > 0 %}
+  {% set previous = poemCollection[currentIndex - 1] %}
+{% endif %}
+
+{% if currentIndex < (poemCollection | length) - 1 %}
+  {% set next = poemCollection[currentIndex + 1] %}
+{% endif %}
+
+<hr class="footer-hr">
+
+<nav class="poem-footer">
+    {% if next %}
+        <div><em>Next: <a href="{{ next.url | url }}">{{ next.data.title }}</a></em></div>
+    {% endif %}
+    
+    {% if previous %}
+        <div><em>Previous: <a href="{{ previous.url | url }}">{{ previous.data.title }}</a></em></div>
+    {% endif %}
+
+    <div>Back to → <a href="{{ '/poetry/' | url }}"><strong>Poetry</strong></a></div>
+</nav>

@@ -1,0 +1,62 @@
+---
+layout: base.njk
+---
+
+<article class="essay">
+
+    {% if videoEssay %}
+        {% set embedUrl = videoEssay
+            | replace("watch?v=", "embed/")
+            | replace("youtu.be/", "www.youtube.com/embed/") %}
+        <div class="video-embed">
+            <iframe
+                src="{{ embedUrl }}"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <figure>
+            <figcaption>Video essay version.</figcaption>
+        </figure>
+
+    {% endif %}
+
+    {{ content | safe }}
+
+</article>
+
+{# Pagination: previous/next based on essay collection #}
+{% set essayCollection = collections.essays | sort(attribute="order") %}
+
+{% set currentIndex = -1 %}
+{% for i in range(0, essayCollection | length) %}
+  {% if essayCollection[i].url == page.url %}
+    {% set currentIndex = i %}
+  {% endif %}
+{% endfor %}
+
+{% set previous = null %}
+{% set next = null %}
+
+{% if currentIndex > 0 %}
+  {% set next = essayCollection[currentIndex - 1] %}
+{% endif %}
+
+{% if currentIndex < (essayCollection | length) - 1 %}
+  {% set previous = essayCollection[currentIndex + 1] %}
+{% endif %}
+
+<hr class="footer-hr">
+
+<nav class="essay-footer">
+    {% if next %}
+        <div><em>Next: <a href="{{ next.url | url }}">{{ next.data.title }}</a></em></div>
+    {% endif %}
+    
+    {% if previous %}
+        <div><em>Previous: <a href="{{ previous.url | url }}">{{ previous.data.title }}</a></em></div>
+    {% endif %}
+
+    <div>Back to → <a href="{{ '/essays/' | url }}"><strong>Essays</strong></a></div>
+</nav>

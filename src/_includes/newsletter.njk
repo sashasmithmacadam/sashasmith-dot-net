@@ -1,0 +1,40 @@
+---
+layout: base.njk
+---
+
+<div class="music-list">
+    <p><strong>Sent on</strong> → {{ date | readableDate }}</p>
+    <p><strong>Issue No.</strong> → {{ number }}</p>
+</div>
+
+<hr class="footer-hr">
+
+<article class="newsletter-content">
+
+  {{ content | safe }}
+
+</article>
+
+{% include "snippets/link-newsletter-subscribe-callout.njk" %}
+
+<hr class="footer-hr">
+
+{% set currentIndex = -1 %}
+{% for nowItem in collections.newsletter %}
+  {% if nowItem.url == page.url %}
+    {% set currentIndex = loop.index0 %}
+  {% endif %}
+{% endfor %}
+
+{% set next = collections.newsletter[currentIndex + 1] %}
+{% set previous = collections.newsletter[currentIndex - 1] %}
+
+<nav class="newsletter-footer">
+  {% if next %}
+    <div><em>Next: <a href="{{ next.url }}">{{ next.data.title }}</a></em></div>
+  {% endif %}
+{% if previous %}
+    <div><em>Previous: <a href="{{ previous.url }}">{{ previous.data.title }}</a></em></div>
+  {% endif %}
+    <div>Back to → <a href="{{ '/newsletter-archive/' | url }}"><strong>Newsletter Archive</strong></a></div>
+</nav>

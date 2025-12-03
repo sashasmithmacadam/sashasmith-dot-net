@@ -1,0 +1,14 @@
+# Node dependencies
+node_modules/
+
+# Build output
+public/
+
+# OS / Editor
+.vscode/
+
+# Website design files
+design/
+
+# Cache
+.cache/

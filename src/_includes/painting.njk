@@ -1,0 +1,62 @@
+---
+layout: base.njk
+---
+
+<div class="painting-image">
+    
+  <a href="{{ images }}">
+    <img src="{{ images }}" alt="{{ title }} painting">
+  </a>
+  
+</div>
+
+<div class="painting-info">
+  
+  <h1 class="painting-title">{{ title }}</h1>
+
+  <div class="painting-metadata">
+    
+    <p>{{ yearStarted }} – {{ yearEnded }}</p>
+
+    <p>{{ medium }}</p>
+
+    <p>{{ dimensions }}</p>
+  
+  </div>
+
+</div>
+
+<hr class="footer-hr">
+
+{# Pagination: previous/next based on collection #}
+{% set paintingCollection = collections.paintings | sort(attribute="yearStarted") %}
+
+{% set currentIndex = -1 %}
+{% for i in range(0, paintingCollection | length) %}
+  {% if paintingCollection[i].url == page.url %}
+    {% set currentIndex = i %}
+  {% endif %}
+{% endfor %}
+
+{% set previous = null %}
+{% set next = null %}
+
+{% if currentIndex > 0 %}
+  {% set next = paintingCollection[currentIndex - 1] %}
+{% endif %}
+
+{% if currentIndex < (paintingCollection | length) - 1 %}
+  {% set previous = paintingCollection[currentIndex + 1] %}
+{% endif %}
+
+<nav class="paintings-footer">
+    {% if next %}
+        <div><em>Next: <a href="{{ next.url | url }}">{{ next.data.title }}</a></em></div>
+    {% endif %}
+    
+    {% if previous %}
+        <div><em>Previous: <a href="{{ previous.url | url }}">{{ previous.data.title }}</a></em></div>
+    {% endif %}
+
+    <div>Back to → <a href="{{ '/paintings/' | url }}"><strong>Paintings</strong></a></div>
+</nav>

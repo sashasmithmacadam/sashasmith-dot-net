@@ -1,0 +1,72 @@
+---
+layout: base.njk
+---
+
+<div class="book-cover-and-metadata">
+  
+  <div class="book-cover">
+    
+    <img src="{{ artwork }}" alt="{{ title }} cover art">
+  
+  </div>
+  
+  <div class="book-metadata">
+    
+    <h1 class="book-title">{{ title }}</h1>
+    
+    <ul>
+        <li>Author: <a href="{{ authorLink | url }}">{{ author }}</a></li>
+        <li>Publication Date: {{ datePublished }}</li>
+        <li>Date Read: {{ dateRead | readDate }}</li>
+    </ul>
+  
+  </div>
+  
+</div>
+
+<article class="book-synopsis">
+  <h2>Synopsis</h2>
+  {{ synopsis | markdownify | safe }}
+</article>
+
+<article class="book-my-notes">
+  <h2>My Notes</h2>
+  {{ content | safe }}
+</article>
+
+
+
+{# Pagination #}
+{% set booknotesCollection = collections.booknotes | sort(attribute="dateRead") %}
+
+{% set currentIndex = -1 %}
+{% for i in range(0, booknotesCollection | length) %}
+  {% if booknotesCollection[i].url == page.url %}
+    {% set currentIndex = i %}
+  {% endif %}
+{% endfor %}
+
+{% set previous = null %}
+{% set next = null %}
+
+{% if currentIndex > 0 %}
+  {% set next = booknotesCollection[currentIndex - 1] %}
+{% endif %}
+
+{% if currentIndex < (booknotesCollection | length) - 1 %}
+  {% set previous = booknotesCollection[currentIndex + 1] %}
+{% endif %}
+
+<hr class="footer-hr">
+
+<nav class="booknotes-footer">
+    {% if next %}
+        <div><em>Next: <a href="{{ next.url | url }}">{{ next.data.title }}</a></em></div>
+    {% endif %}
+    
+    {% if previous %}
+        <div><em>Previous: <a href="{{ previous.url | url }}">{{ previous.data.title }}</a></em></div>
+    {% endif %}
+
+    <div>Back to → <a href="{{ '/book-notes/' | url }}"><strong>Book Notes</strong></a></div>
+</nav>

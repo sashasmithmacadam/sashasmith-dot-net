@@ -1,0 +1,33 @@
+---
+layout: "base.njk"
+---
+
+{% set currentIndex = -1 %}
+{% for nowItem in collections.now %}
+  {% if nowItem.url == page.url %}
+    {% set currentIndex = loop.index0 %}
+  {% endif %}
+{% endfor %}
+
+{% set previous = collections.now[currentIndex + 1] %}
+{% set next = collections.now[currentIndex - 1] %}
+
+<article class="now-content">
+
+  {{ content | safe }}
+
+</article>
+
+<hr class="footer-hr">
+
+<nav class="now-footer">
+  {% if next %}
+    <div><em>Next: <a href="{{ next.url }}">{{ next.data.title }}</a></em></div>
+  {% endif %}
+
+{% if previous %}
+    <div><em>Previous: <a href="{{ previous.url }}">{{ previous.data.title }}</a></em></div>
+  {% endif %}
+
+  <div>Back to → <a href="{{ '/then/' | url }}"><strong>Now Archive</strong></a></div>
+</nav>

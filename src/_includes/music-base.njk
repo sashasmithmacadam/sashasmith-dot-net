@@ -1,0 +1,44 @@
+---
+layout: "base.njk"
+---
+
+<article class="music-release-container">
+
+  {{ content | safe }}
+
+</article>
+
+{# Pagination: previous/next based on music collection #}
+{% set musicCollection = collections.music | sort(attribute="date") %}
+
+{% set currentIndex = -1 %}
+{% for i in range(0, musicCollection | length) %}
+  {% if musicCollection[i].url == page.url %}
+    {% set currentIndex = i %}
+  {% endif %}
+{% endfor %}
+
+{% set previous = null %}
+{% set next = null %}
+
+{% if currentIndex > 0 %}
+  {% set previous = musicCollection[currentIndex - 1] %}
+{% endif %}
+
+{% if currentIndex < (musicCollection | length) - 1 %}
+  {% set next = musicCollection[currentIndex + 1] %}
+{% endif %}
+
+<hr class="footer-hr">
+
+<nav class="music-footer">
+    {% if next %}
+        <div><em>Next: <a href="{{ next.url | url }}">{{ next.data.title }}</a></em></div>
+    {% endif %}
+    
+    {% if previous %}
+        <div><em>Previous: <a href="{{ previous.url | url }}">{{ previous.data.title }}</a></em></div>
+    {% endif %}
+
+    <div>Back to → <a href="{{ '/music/' | url }}"><strong>Music</strong></a></div>
+</nav>

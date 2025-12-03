@@ -1,0 +1,854 @@
+/* ======================================================
+   Variables
+   ====================================================== */
+:root {
+  /* Typography */
+  --font-base-size: 18px;
+  --font-base-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-title-family: 'Daniel', sans-serif;
+  --font-heading-color: #111827;
+  --font-body-color: #222222;
+
+  /* Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --weight-black: 900;
+
+  /* Colors */
+  --color-accent: #0969DA;
+  --color-accent-hover: #065bbb;
+  --color-muted: #57606a;
+  --color-muted-2: #6a737d;
+  --color-light-border: #f2f2f2;
+  --color-table-border: #d1d5da;
+  --color-bg-muted: #f6f8fa;
+  --color-highlight: #fcbe11;
+  --color-callout: #fcbf30a1; 
+
+  /* Background */
+  --background-color: #ffffff;
+
+  /* Layout / spacing */
+  --content-width: 750px;
+  --spacing-xxs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xlg: 2.5rem;
+
+  /* Images / figure */
+  --figure-caption-color: #a8a8a8;
+}
+
+/* ======================================================
+   DARK MODE overrides
+   ====================================================== */
+.dark {
+  --font-heading-color: #e0e0e0;       /* lighter gray for headings */
+  --font-body-color: #d6d6d6;          /* slightly softer body text */
+  
+  --color-accent: #6ea0ff;             /* softer accent blue */
+  --color-accent-hover: #8cb8ff;       /* lighter on hover */
+  
+  --color-muted: #a0a8b0;               /* muted text for secondary content */
+  --color-muted-2: #8c9298;             /* even softer for smaller text */
+  
+  --color-light-border: #444;           /* subtle borders */
+  --color-table-border: #555;
+  
+  --color-bg-muted: #2a2a2a;            /* soft dark gray for code blocks, etc. */
+  --background-color: #1f1f1f;          /* main background softer black */
+  
+  --color-highlight: #d8b467;           /* soft yellow highlight */
+
+  --color-callout: none;
+  
+  --figure-caption-color: #999;         /* subtle caption text */
+}
+
+/* Toggle button */
+.theme-toggle {
+  position: fixed;       /* fixed to viewport */
+  top: 1.5rem;             /* distance from top */
+  right: 1.5rem;           /* distance from right */
+  z-index: 1000;         /* ensures it’s above other elements */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-color);
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);  /* subtle hover effect */
+  background: rgba(0,0,0,0.05);
+}
+
+.theme-toggle svg path {
+  fill: var(--font-body-color);
+  transition: opacity 0.4s ease;
+}
+
+/* Light mode (default) */
+.icon-sun { opacity: 1; }
+.icon-moon { opacity: 0; }
+
+/* Dark mode */
+html.dark .icon-sun { opacity: 0; }
+html.dark .icon-moon { opacity: 1; }
+
+#theme-icon-path {
+  transition: d 0.7s ease;
+}
+
+#sun-rays {
+  transition: opacity 1.5s ease;
+}
+
+html.dark #sun-rays,
+:root.dark #sun-rays {
+  opacity: 0;
+  transition: none; /* instantly hide rays when dark */
+}
+
+/* Override shadow in dark mode for visibility */
+html.dark .theme-toggle {
+    background: #2b2b2b; /* slightly lighter than main background */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5); /* more visible */
+}
+
+/* Optional hover tweak for dark mode */
+html.dark .theme-toggle:hover {
+    background: rgba(255,255,255,0.05); /* subtle light overlay */
+}
+
+
+/* ======================================================
+   Fonts
+   ====================================================== */
+
+@font-face {
+  font-family: "Daniel";
+  src: url("/assets/fonts/daniel-regular.woff2") format("woff2"),
+       url("/assets/fonts/daniel-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Daniel";
+  src: url("/assets/fonts/daniel-bold.woff2") format("woff2"),
+       url("/assets/fonts/daniel-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Daniel";
+  src: url("/assets/fonts/daniel-black.woff2") format("woff2"),
+       url("/assets/fonts/daniel-black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ======================================================
+   Base / Reset
+   ====================================================== */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-base-family);
+  font-size: var(--font-base-size);
+  line-height: 1.65;
+  color: var(--font-body-color);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+}
+
+/* make images responsive and centered by default */
+img {
+  display: block;
+  margin: var(--spacing-xs) auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Basic element spacing */
+p { margin-bottom: 1.2em; }
+
+ul, ol {
+  margin: 1em 0 1em 1.5em;
+  padding-left: 0;
+}
+
+li { margin-bottom: 0em; }
+
+/* Remove top/bottom margin from nested lists */
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: 0em;     /* tweak as needed */
+  margin-bottom: 0em;  /* tweak as needed */
+  padding-left: 0.25em;   /* indent */
+}
+
+/* Level 1 */
+ul {
+  list-style-type: disc;
+}
+
+/* Level 2 */
+ul ul {
+  list-style-type: disc;
+}
+
+/* Level 3 */
+ul ul ul {
+  list-style-type: disc;
+}
+
+/* Level 4 */
+ul ul ul ul {
+  list-style-type: disc;
+}
+
+.spaced-list li {
+  margin: 0.5rem 0;
+}
+
+
+/* ======================================================
+   Typography / Headings / Links
+   ====================================================== */
+
+h1 { font-size: 2.25rem; line-height: 1.2; }
+h2 { font-size: 1.875rem; line-height: 1.25; }
+h3 { font-size: 1.5rem; line-height: 1.3; }
+h4 { font-size: 1.25rem; line-height: 1.35; }
+h5 { font-size: 1rem; line-height: 1.4; }
+h6 { font-size: 0.875rem; line-height: 1.5; }
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: inherit;
+  font-weight: var(--weight-medium);
+  color: var(--font-heading-color);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Page title used inside layout (optional wrapper handles spacing) */
+.page-title {
+  margin-top: var(--spacing-sm);
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.now-content h2,
+.latest-now-content h2 {
+  font-size: 1.5rem;
+  font-weight: var(--weight-medium);
+}
+
+.now-content h3,
+.latest-now-content h3 {
+  font-size: 1.2rem;
+  font-weight: var(--weight-medium);
+  position: relative;
+}
+
+/* Add ⨀ before every h3 */
+.now-content h3::before,
+.latest-now-content h3::before {
+  content: "⨀ ";
+  /*color: var(--color-highlight); /* optional: different color for the symbol */
+  margin-right: 0.1rem; /* spacing between symbol and text */
+}
+
+.now-content h2:not(:first-of-type)::before,
+.latest-now-content h2:not(:first-of-type)::before {
+  content: "";
+  display: block;
+  border-top: 1px solid var(--color-muted-2); /* style of the horizontal rule */
+  margin: 1.5rem 0; /* spacing above/below */
+}
+
+/* Links */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px solid var(--color-accent-hover);
+  outline-offset: 2px;
+}
+
+/* ======================================================
+   Blockquote / Quotes
+   ====================================================== */
+
+blockquote {
+  margin: var(--spacing-md) 0;
+  padding: 0.5em 1.5em;
+  border-left: 4px solid var(--color-light-border);
+  color: var(--color-muted);
+  font-style: italic;
+  line-height: 1.5;
+  background: transparent; /* keep available if you want a subtle bg */
+}
+
+/* decorative large quotes (if wanted) */
+/* blockquote::before { content: "“"; font-size: 3rem; color: var(--color-accent); opacity: 0.12; position: absolute; } */
+
+/* ======================================================
+   Code / Preformatted / Tables
+   ====================================================== */
+
+code {
+  font-family: "Fira Mono", "Courier New", monospace;
+  background-color: var(--color-bg-muted);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+pre {
+  background-color: var(--color-bg-muted);
+  padding: 1em;
+  overflow-x: auto;
+  border-radius: 6px;
+  margin: 1em 0;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+th, td {
+  border: 1px solid var(--color-table-border);
+  padding: 0.5em 1em;
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-bg-muted);
+}
+
+/* ======================================================
+   Layout & Components
+   ====================================================== */
+
+.content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--spacing-xs) var(--spacing-xlg);
+}
+
+/* Header / Title / Nav */
+.site-header {
+  text-align: center;
+  margin: var(--spacing-xs) 0;
+}
+
+.site-title {
+  margin: var(--spacing-lg) 0 0;
+}
+
+/* Site title uses the Daniel font */
+.site-title a {
+  font-family: var(--font-title-family);
+  font-size: 3.3rem;
+  font-weight: var(--weight-regular);
+  text-decoration: none;
+  color: inherit;
+  /* keep smoothing for display fonts */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent hover/underline on the title link */
+.site-title a:hover,
+.site-title a:focus {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+.poem {
+  font-family: monospace;
+}
+
+.poem-title {
+  font-family: monospace;
+  margin-top: var(--spacing-sm);
+  margin-bottom: 0.5rem;
+}
+
+.poem-date {
+  font-family: monospace;
+  font-size: 0.8em;
+}
+
+/* =============================
+   Music Page (Single Release)
+   ============================= */
+.release-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 2.1rem;
+  margin-top: var(--spacing-sm);
+  margin-bottom: 0.25rem;
+}
+
+.release-badge {
+  display: inline-block;
+  font-size: 0.4em;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.06em;
+  padding: 0.18rem 0.5rem;
+  border-radius: 0.35rem;
+  border: 1px solid currentColor;
+  background: rgba(0,0,0,0.04);
+  text-transform: uppercase;
+}
+
+.music-release-container h2 {
+  margin-top: 0;
+  font-size: 1.7rem;
+  font-weight: var(--weight-medium);
+}
+
+/* Responsive video embeds */
+.video-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  margin-bottom: 1rem;
+}
+
+.video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.essay .video-embed {
+  margin-bottom: 0;
+}
+
+/* Lyrics block */
+.lyrics {
+  white-space: pre-wrap;
+  line-height: 1.5;
+  margin-top: 1rem;
+  font-family: inherit;
+}
+
+/* =============================
+   Music Page (EP Release)
+   ============================= */
+/* Container: artwork + tracks side-by-side */
+.release-artwork-and-tracks {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Artwork wrapper */
+.release-artwork {
+  flex-shrink: 0;
+}
+
+/* Artwork image */
+.release-artwork img {
+  width: 350px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Tracks section */
+.release-tracks ol {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.release-tracks li {
+  margin-bottom: 0.2rem;
+}
+
+
+/* =============================
+   Music Page (List View)
+   ============================= */
+
+/* Layout for each release row */
+.music-list-item {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem; /* controlled spacing between releases */
+}
+
+.music-list p {
+  margin: 0;
+}
+
+/* Artwork styling */
+.music-thumb img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Title + badge row */
+.music-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 2rem 0 0.75rem;
+}
+
+/* Title */
+.music-title {
+  font-size: 1.25rem;
+  font-weight: var(--weight-medium);
+  text-decoration: underline;
+  color: var(--color-muted);
+}
+
+/* Mini badge (list page version) */
+.music-list .release-badge {
+  display: flex;
+  font-size: 0.55rem;
+  padding: 0.1rem 0.3rem;
+  letter-spacing: 0.06em;
+  border-radius: 0.35rem;
+  border: 1px solid currentColor;
+  background: rgba(0,0,0,0.04);
+  text-transform: uppercase;
+}
+
+/* Year under title row */
+.music-year {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+
+/* =============================
+   Book Notes
+   ============================= */
+/* Container: book cover + metadata side-by-side */
+.book-cover-and-metadata {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: var(--spacing-xs);
+}
+
+/* Artwork wrapper */
+.book-cover {
+  flex-shrink: 0;
+}
+
+/* Artwork image */
+.book-cover img {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+.book-title {
+  margin-top: var(--spacing-md);
+  margin-bottom: 0.5rem;
+}
+
+.book-metadata ul {
+  margin-top: 1.5rem;
+  padding-left: 0;
+}
+
+.book-metadata li {
+  margin-bottom: 0.3rem;
+}
+
+/* =============================
+   Paintings
+   ============================= */
+
+.painting-info {
+  text-align: center;
+}
+
+.painting-info p {
+  margin: 0.2em;
+}
+
+.painting-title {
+  font-size: 1.1rem;
+  font-weight: var(--weight-bold);
+  margin-top: 1em;
+}
+
+.painting-metadata {
+  font-size: 0.9rem;
+}
+
+.painting-gallery:not(:first-of-type) a:has(img)::before {
+  content: "";
+  display: block;
+  border-top: 1px solid var(--color-muted-2);
+  margin: 2.5rem 0;
+}
+
+.painting-gallery a {
+  display: block;
+}
+
+/* ============================
+   Main Navigation (Unified)
+   ============================ */
+
+.site-nav {
+  text-align: center;        /* keeps header title + nav visually centered */
+  margin-top: 0rem;
+}
+
+/* Flex container for main nav links */
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;   /* <-- THIS centers the nav */
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* Each top-level nav item */
+.site-nav li {
+  position: relative;
+}
+
+/* Top-level nav links */
+.site-nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--font-body-color);
+  font-weight: var(--weight-medium);
+  font-size: 13px;
+  padding: 0.25rem 0;
+}
+
+.site-nav a.active,
+.sub-nav li.active > a {
+  color: var(--color-accent);
+}
+
+.site-nav a:hover,
+.site-nav a:focus,
+.sub-nav li a:hover,
+.sub-nav li a:focus {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* ============================
+   Dropdown / Sub-Navigation
+   ============================ */
+
+.site-nav .sub-nav {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+
+  transform: translateX(-50%);      /* centers dropdown under parent */
+  background: var(--background-color);
+  padding: 0.5rem 0;
+  border: 1px solid var(--color-light-border);
+  border-radius: 6px;
+  list-style: none;
+  width: max-content;
+  text-align: center;
+}
+
+/* Show dropdown on hover */
+.site-nav li:hover > .sub-nav {
+  display: block;
+}
+
+/* Sub-nav items */
+.sub-nav li {
+  padding: 0rem 0.75rem;
+}
+
+.sub-nav li a {
+  white-space: nowrap;
+}
+
+.accordion-item {
+  /*margin-bottom: 1rem;*/
+  /*border-bottom: 1.5px solid var(--color-muted-2);*/
+  padding: 0 1.5rem;
+}
+
+.accordion-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1em;
+  font-weight: var(--weight-bold);
+  color: var(--font-body-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+  font-size: 1.8rem;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease, opacity 0.2s ease;
+  opacity: 0;
+  /*padding: 0 1rem 1rem; */
+  margin-block: 0 0;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 5000px; /* large enough to fit content */
+  opacity: 1;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(45deg); /* + becomes x */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  /*margin-top: 3rem;*/
+  padding-bottom: 2rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.footer-hr {
+  height: 2px;
+  background-color: var(--font-body-color);
+  margin: 1.5rem 0;
+}
+
+/* ======================================================
+   Figures / Captions / Media
+   ====================================================== */
+
+figure {
+  display: table;               /* shrinkwrap to content width */
+  margin: 0.5rem auto;
+  text-align: center;
+}
+
+figure .video-wrapper,
+figure iframe {
+  max-width: 100%;
+  display: block;
+}
+
+/* caption */
+figcaption {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--figure-caption-color);
+  margin-top: 0.2rem;
+}
+
+.callout {
+  border: 2px solid var(--font-body-color);
+  border-radius: 10px;
+  background-color: var(--color-callout);
+  padding: 0.5em 1em;
+}
+
+/* ======================================================
+   Utilities
+   ====================================================== */
+
+/* small text */
+small {
+  font-size: 0.875em;
+  color: var(--color-muted-2);
+}
+
+::-moz-selection { 
+  background: var(--color-highlight);
+}
+
+::selection {
+  background: var(--color-highlight);
+}
+
+/* ======================================================
+   Responsive tweaks
+   ====================================================== */
+
+@media (max-width: 600px) {
+  :root {
+    /* you can tweak scale if you want smaller base on mobile */
+    --font-base-size: 15px;
+  }
+
+  body { font-size: var(--font-base-size); }
+
+  /*h1 { font-size: 1.75rem; }*/
+
+  .content {
+    padding: 1.5rem 1rem;
+  }
+
+  .site-title a {
+    font-size: 2.4rem;
+  }
+}

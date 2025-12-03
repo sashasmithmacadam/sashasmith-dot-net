@@ -1,0 +1,86 @@
+---
+layout: "music-base.njk"
+---
+
+  {# Title + badge (releaseType shown as a boxed badge) #}
+  <h1 class="release-title">
+    {{ title }}
+    {% if releaseType %}
+      <span class="release-badge" aria-hidden="true">{{ releaseType }}</span>
+    {% endif %}
+  </h1>
+
+    {# Release Year (you can move this elsewhere) #}
+  {% if date %}
+    <p class="release-meta">{{ date.getFullYear() }}</p>
+  {% endif %}
+
+  {# Listen Links (single-line, comma-separated) #}
+  {% set listenLinks = [] %}
+
+  {% if spotify %}
+    {% set listenLinks = listenLinks.concat([{ name: "Spotify", url: spotify }]) %}
+  {% endif %}
+  {% if appleMusic %}
+    {% set listenLinks = listenLinks.concat([{ name: "Apple Music", url: appleMusic }]) %}
+  {% endif %}
+  {% if bandcamp %}
+    {% set listenLinks = listenLinks.concat([{ name: "Bandcamp", url: bandcamp }]) %}
+  {% endif %}
+  {% if youtube %}
+    {% set listenLinks = listenLinks.concat([{ name: "YouTube", url: youtube }]) %}
+  {% endif %}
+
+  {% if listenLinks.length %}
+    <p class="listen-line">
+      <strong>Listen on:</strong>
+      {% for item in listenLinks %}
+        <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.name }}</a>{% if not loop.last %}, {% else %}.{% endif %}
+      {% endfor %}
+    </p>
+  {% endif %}
+
+
+  {# Find EPs that contain this single's title #}
+  {% set parentReleases = [] %}
+
+  {% for ep in collections.eps %}
+    {% if ep.data.tracks and ep.data.tracks.includes(title) %}
+      {% set parentReleases = parentReleases.concat([ep]) %}
+    {% endif %}
+  {% endfor %}
+
+  {# Sort by date (earliest → latest). Remove "reverse" to invert #}
+  {% set parentReleases = parentReleases | sort(attribute="date") | reverse %}
+
+  {% if parentReleases.length %}
+    <p class="release-meta">
+      <strong>Part of:</strong>
+      {% for ep in parentReleases %}
+        <a href="{{ ep.url | url }}">{{ ep.data.title }}</a>{% if not loop.last %}, {% else %}.{% endif %}
+      {% endfor %}
+    </p>
+  {% endif %}
+
+  {# Embedded Videos (responsive) #}
+  {% if videoLinks %}
+      <h2>Videos</h2>
+      {% for link in videoLinks %}
+          {% set embedUrl = link
+              | replace("watch?v=", "embed/")
+              | replace("youtu.be/", "www.youtube.com/embed/") %}
+          <div class="video-embed">
+          <iframe
+              src="{{ embedUrl }}"
+              frameborder="0"
+              allowfullscreen>
+          </iframe>
+          </div>
+      {% endfor %}
+  {% endif %}
+
+  {# Lyrics #}
+  {% if lyrics %}
+    <h2>Lyrics</h2>
+    <pre class="lyrics">{{ lyrics }}</pre>
+  {% endif %}

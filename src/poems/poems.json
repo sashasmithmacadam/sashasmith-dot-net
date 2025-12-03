@@ -1,0 +1,5 @@
+{
+    "layout": "poem.njk",
+    "tags": "poem",
+    "hidePageTitle": true
+}

@@ -1,0 +1,88 @@
+---
+layout: "music-base.njk"
+---
+
+  {# Title + badge (releaseType shown as a boxed badge) #}
+  <h1 class="release-title">
+    {{ title }}
+    {% if releaseType %}
+      <span class="release-badge" aria-hidden="true">{{ releaseType }}</span>
+    {% endif %}
+  </h1>
+
+
+  {# Release Year (you can move this elsewhere) #}
+  {% if date %}
+    <p class="release-meta">{{ date.getFullYear() }}</p>
+  {% endif %}
+
+
+  {# Listen Links (single-line, comma-separated) #}
+  {% set listenLinks = [] %}
+
+  {% if spotify %}
+    {% set listenLinks = listenLinks.concat([{ name: "Spotify", url: spotify }]) %}
+  {% endif %}
+  {% if appleMusic %}
+    {% set listenLinks = listenLinks.concat([{ name: "Apple Music", url: appleMusic }]) %}
+  {% endif %}
+  {% if bandcamp %}
+    {% set listenLinks = listenLinks.concat([{ name: "Bandcamp", url: bandcamp }]) %}
+  {% endif %}
+  {% if youtube %}
+    {% set listenLinks = listenLinks.concat([{ name: "YouTube", url: youtube }]) %}
+  {% endif %}
+
+  {% if listenLinks.length %}
+    <p class="listen-line">
+      <strong>Listen on:</strong>
+      {% for item in listenLinks %}
+        <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.name }}</a>{% if not loop.last %}, {% else %}.{% endif %}
+      {% endfor %}
+    </p>
+  {% endif %}
+
+
+  {# If either artwork or tracks exist, wrap them in a layout container #}
+  {% if artwork or tracks %}
+    <div class="release-artwork-and-tracks">
+
+      {# Artwork (only if provided) #}
+      {% if artwork %}
+        <div class="release-artwork">
+          <img src="{{ artwork }}" alt="{{ title }} artwork">
+        </div>
+      {% endif %}
+
+      {# Tracklist (only if provided) #}
+      {% if tracks %}
+        <div class="release-tracks">
+          <p><strong>Tracks:</strong></p>
+          <ol>
+            {% for trackTitle in tracks %}
+
+              {# Start with no match #}
+              {% set matched = null %}
+
+              {# Try to find a matching single by title #}
+              {% for s in collections.singles %}
+                {% if matched == null and s.data.title == trackTitle %}
+                  {% set matched = s %}
+                {% endif %}
+              {% endfor %}
+
+              <li>
+                {% if matched %}
+                  <a href="{{ matched.url | url }}">{{ trackTitle }}</a>
+                {% else %}
+                  {{ trackTitle }}
+                {% endif %}
+              </li>
+
+            {% endfor %}
+          </ol>
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
