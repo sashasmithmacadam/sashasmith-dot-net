@@ -477,6 +477,7 @@ th {
 /* =============================
    Music Page (EP Release)
    ============================= */
+   
 /* Container: artwork + tracks side-by-side */
 .release-artwork-and-tracks {
   display: flex;
