@@ -831,25 +831,108 @@ small {
   background: var(--color-highlight);
 }
 
+
 /* ======================================================
-   Responsive tweaks
+   MOBILE RESPONSIVENESS FOUNDATION
+   Safe baseline tweaks — desktop unaffected.
    ====================================================== */
 
-@media (max-width: 600px) {
-  :root {
+@media (max-width: 750px) {
+
+:root {
     /* you can tweak scale if you want smaller base on mobile */
-    --font-base-size: 15px;
+    --font-base-size: 18px;
   }
 
   body { font-size: var(--font-base-size); }
 
-  /*h1 { font-size: 1.75rem; }*/
-
-  .content {
-    padding: 1.5rem 1rem;
-  }
-
   .site-title a {
     font-size: 2.4rem;
   }
+
+
+  /* ------------------------------
+     Fluid images that currently have fixed widths
+     ------------------------------ */
+
+  .music-thumb img,
+  .release-artwork img,
+  .book-cover img {
+    width: 100%;
+    height: auto;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  /* ------------------------------
+     Layouts that need stacking on mobile
+     ------------------------------ */
+
+  /* Music EP page: artwork + tracklist */
+  .release-artwork-and-tracks {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+
+  /* Music list items */
+  .music-list-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem;
+  }
+
+  .music-title-row {
+    margin: 0.5rem 0 0.5rem;
+  }
+
+  /* Book notes */
+  .book-cover-and-metadata {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: left;
+  }
+
+  /* ------------------------------
+     Better mobile content spacing
+     ------------------------------ */
+  .content {
+    padding: 1.2rem 1.1rem;
+  }
+
+  /* ------------------------------
+     Typography adjustments for readability
+     ------------------------------ */
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.55rem; }
+  h3 { font-size: 1.28rem; }
+
+  /* ------------------------------
+     Tables become scrollable
+     ------------------------------ */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
+
+/* ======================================================
+   MOBILE UTILITIES — Safe to use anywhere
+   ====================================================== */
+
+@media (max-width: 750px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 751px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
