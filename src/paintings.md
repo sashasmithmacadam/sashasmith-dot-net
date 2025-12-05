@@ -2,6 +2,9 @@
 layout: "base.njk"
 title: "Paintings"
 hidePageTitle: false
+eleventyNavigation:
+    key: Paintings
+    order: 4
 ---
 
 {% for painting in collections.paintings %}

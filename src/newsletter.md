@@ -2,6 +2,9 @@
 layout: "base.njk"
 title: "Newsletter"
 hidePageTitle: false
+eleventyNavigation:
+    key: Newsletter
+    order: 5
 ---
 
 *The newsletter’s taking a short break while I finish up some projects.* *Subscribe below to get updates as soon as they’re ready.*

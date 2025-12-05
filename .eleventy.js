@@ -2,6 +2,7 @@ const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 
 module.exports = function(eleventyConfig) {
@@ -46,6 +47,7 @@ module.exports = function(eleventyConfig) {
    * --------------------------- */
   eleventyConfig.addPlugin(eleventyImageTransformPlugin);
   eleventyConfig.addPlugin(embedYouTube);
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
  /* ---------------------------
    * Collections

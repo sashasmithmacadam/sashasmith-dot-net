@@ -2,6 +2,10 @@
 layout: "base.njk"
 title: "Essays"
 hidePageTitle: false
+eleventyNavigation:
+    key: Essays
+    parent: Writing
+    order: 1
 ---
 
 My {{ collections.essays | length }} essays, sorted from newest to oldest:

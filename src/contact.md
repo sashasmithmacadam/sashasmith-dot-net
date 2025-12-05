@@ -2,6 +2,9 @@
 layout: "base.njk"
 title: "Contact"
 hidePageTitle: false
+eleventyNavigation:
+    key: Contact
+    order: 8
 ---
 
 Send me an email → sasha@sashasmith.net

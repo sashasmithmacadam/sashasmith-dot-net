@@ -2,6 +2,10 @@
 layout: "base.njk"
 title: "Book Notes"
 hidePageTitle: false
+eleventyNavigation:
+    key: Book Notes
+    parent: Writing
+    order: 3
 ---
 
 Below you will find my {{ collections.booknotes | length }} book notes, sorted from newest to oldest.

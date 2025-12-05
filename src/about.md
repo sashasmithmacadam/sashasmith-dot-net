@@ -1,6 +1,9 @@
 ---
 layout: "base.njk"
 title: "About"
+eleventyNavigation:
+    key: About
+    order: 7
 ---
 
 Looking for the quick *bird’s-eye view*? Head to the → **highlights**.

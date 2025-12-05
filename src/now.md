@@ -2,6 +2,9 @@
 layout: "base.njk"
 title: "Now"
 hidePageTitle: false
+eleventyNavigation:
+    key: Now
+    order: 6
 ---
 
 *(This is [a now page](https://nownownow.com/about). If you have your own site, [you should make one](https://nownownow.com/about) as well.)*

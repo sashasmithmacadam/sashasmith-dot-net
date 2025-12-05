@@ -2,6 +2,9 @@
 layout: "base.njk"
 title: "Home"
 hidePageTitle: true
+eleventyNavigation:
+    key: Home
+    order: 1
 ---
 
 Hey, it’s [Sash]({{ '/about/' | url }}):
