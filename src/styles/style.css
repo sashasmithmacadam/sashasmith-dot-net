@@ -1023,6 +1023,10 @@ small {
     position: absolute;
   }
 
+  .site-nav a {
+    font-size: 14px;
+  }
+
   /* Hide desktop nav ul */
   .site-nav ul {
     flex-direction: column;
@@ -1052,8 +1056,7 @@ small {
     flex-direction: column;
     gap: 0.5rem;
   }
-}
-@media (max-width: 750px) {
+
   .site-nav .has-children > a {
     justify-content: space-between;
     display: flex;
@@ -1064,19 +1067,17 @@ small {
     cursor: pointer;
     transition: transform 0.3s ease;
   }
-}
 
-.sub-nav {
-  display: none;
-  flex-direction: column;
-  gap: 0.5rem;
-}
+  .sub-nav {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-.sub-nav.open {
-  display: flex;
-}
+  .sub-nav.open {
+    display: flex;
+  }
 
-@media (max-width: 750px) {
   .sub-nav {
     max-height: 0;
     overflow: hidden;
@@ -1090,28 +1091,28 @@ small {
     max-height: 500px; /* big enough to fit content */
     opacity: 1;
   }
-}
 
-.site-nav .has-children > a {
-  display: flex;
-  justify-content: center; /* keep text centered */
-  position: relative;
-  margin-right: 1.1em; /* increases space between arrow and next item */
-}
+  .site-nav .has-children > a {
+    display: flex;
+    justify-content: center; /* keep text centered */
+    position: relative;
+    margin-right: 1.1em; /* increases space between arrow and next item */
+  }
 
-.site-nav .has-children > a .submenu-toggle {
-  position: absolute;
-  margin-left: 6em;
-}
+  .site-nav .has-children > a .submenu-toggle {
+    position: absolute;
+    margin-left: 6em;
+  }
 
-/* Mobile submenu arrow */
-.submenu-toggle {
-  display: inline-block;
-  transition: transform 0.3s ease;
-  margin-left: 0.5rem;
-}
+  /* Mobile submenu arrow */
+  .submenu-toggle {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-left: 0.5rem;
+  }
 
-/* Rotate arrow when open */
-.has-children.active > a .submenu-toggle {
-  transform: rotate(180deg);
+  /* Rotate arrow when open */
+  .has-children.active > a .submenu-toggle {
+    transform: rotate(180deg);
+  }
 }
