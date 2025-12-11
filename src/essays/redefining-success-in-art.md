@@ -50,7 +50,7 @@ He went on to compose some of the most celebrated works in classical music histo
 
 Beethoven’s devotion to music, even in silence, reveals an artist who lived to create, pushing the boundaries of his medium until the very end.
 
-**Toni Morrison**, the Nobel Prize-winning author of _[Beloved](https://www.goodreads.com/book/show/1411614.Beloved)_ and other masterpieces, also lived by this principle.
+**Toni Morrison**, the Nobel Prize-winning author of *[Beloved](https://www.goodreads.com/book/show/1411614.Beloved)* and other masterpieces, also lived by this principle.
 
 Writing well into her late 80s, she once stated:
 
@@ -60,7 +60,7 @@ For Morrison, the act of writing was one of freedom and necessity—a means of f
 
 **Leonard Cohen**, poet, songwriter, and performer, embodied this ethos in his final years.
 
-Despite declining health, he continued to create until the very end, releasing the haunting album _[You Want It Darker](https://en.wikipedia.org/wiki/You_Want_It_Darker)_ just weeks before his death in 2016.
+Despite declining health, he continued to create until the very end, releasing the haunting album *[You Want It Darker](https://en.wikipedia.org/wiki/You_Want_It_Darker)* just weeks before his death in 2016.
 
 His final works grappled with mortality and meaning, proving that for him, artistic creation was not merely a career—it was a way of making sense of life itself.
 

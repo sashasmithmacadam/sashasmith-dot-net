@@ -2,6 +2,10 @@
 layout: "base.njk"
 title: "Poetry"
 hidePageTitle: false
+eleventyNavigation:
+  key: Poetry
+  parent: Writing
+  order: 2
 ---
 
 My {{ collections.poems | length }} poems, sorted from newest to oldest:

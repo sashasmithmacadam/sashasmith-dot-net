@@ -17,10 +17,8 @@ The result? A flattening of creativity, a stifling of exploration, and an overwh
 
 ## It’s not just artists. Everyone is feeling it.
 
--   **Younger generations,** raised with social media as an extension of their social lives, are desperate to quit but feel shackled by the fear of ostracization.
-    
--   **Older generations,** weary of the ad-saturated monotony of Facebook and Instagram, are starting to tune out.
-    
+- **Younger generations,** raised with social media as an extension of their social lives, are desperate to quit but feel shackled by the fear of ostracization.
+- **Older generations,** weary of the ad-saturated monotony of Facebook and Instagram, are starting to tune out.
 
 Across age groups, there’s a shared fatigue.
 
@@ -58,10 +56,8 @@ And as this quiet revolution grows louder, I’m convinced we’ll see more peop
 
 We may even witness a **cultural shift:**
 
--   Phone detox centres.
-    
--   Support groups for social media recovery.
-    
+- Phone detox centres.
+- Support groups for social media recovery.
 
 The parallels to addiction are apt: social media has hijacked our attention and our connections, and reclaiming them will take effort, support, and a collective will to change.
 

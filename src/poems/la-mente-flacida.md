@@ -1,6 +1,6 @@
 ---
-title: "la mente flácida"  
-permalink: "/mente-flacida/"  
+title: "la mente flácida"
+permalink: "/mente-flacida/"
 date: 2024-04-30T20:27:00+02:00
 ---
 

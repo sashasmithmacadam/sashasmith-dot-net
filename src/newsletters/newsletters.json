@@ -1,5 +1,5 @@
 {
-    "layout": "newsletter.njk",
-    "tags": "newsletter",
-    "hidePageTitle": false
+  "layout": "newsletter.njk",
+  "tags": "newsletter",
+  "hidePageTitle": false
 }

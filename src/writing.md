@@ -2,6 +2,9 @@
 layout: "base.njk"
 title: "Writing"
 hidePageTitle: false
+eleventyNavigation:
+  key: Writing
+  order: 3
 ---
 
 I write mostly to understand what’s going on inside my head. Occasionally it works. Often it just leads to more things to write about.

@@ -12,17 +12,17 @@ Hola amigos! Keeping it brief(ish) today—I just wrapped up an intense day of w
 
 **→ What I’m Creating**
 
-**⨀ New Song Out This Friday → *She Can Be***
+**⨀ New Song Out This Friday → _She Can Be_**
 
 Last week, I told you this song was proving deceptively tricky to finish, but I was starting to see the light… Well, I made it in time!
 
-I finished mixing last night, and everything’s set for release this Friday. This will be the second single from my upcoming EP *Running Down Dark Alleys Blind*.
+I finished mixing last night, and everything’s set for release this Friday. This will be the second single from my upcoming EP _Running Down Dark Alleys Blind_.
 
 I’ll send you a link when it goes live!
 
 **⨀ New [Video Essay](https://www.youtube.com/watch?v=IgJP_iyQN7Y)**
 
-As soon as I sent *She Can Be* off to Spotify, I sat down and recorded a [new video essay](https://www.youtube.com/watch?v=IgJP_iyQN7Y).
+As soon as I sent _She Can Be_ off to Spotify, I sat down and recorded a [new video essay](https://www.youtube.com/watch?v=IgJP_iyQN7Y).
 
 This one’s different from my last—it’s just me at my desk, reading it out loud. No B-roll, no music, just the words.
 
@@ -34,11 +34,11 @@ Hope you enjoy the simplicity of it → [https://youtu.be/IgJP_iyQN7Y](https://y
 
 I’m part of a generation that struggles with rest. We either want none of it—always go go go—or we overdo it, sinking into perpetual Netflix and chill mode.
 
-I can feel the contraction from pushing to finish *She Can Be* in time for its release. Now that it’s done, it’s time to expand again—before diving into the rest of the EP.
+I can feel the contraction from pushing to finish _She Can Be_ in time for its release. Now that it’s done, it’s time to expand again—before diving into the rest of the EP.
 
 Here’s the mantra I kept at the top of my notes while finishing the song:
 
-*“This is now done—I’m releasing it and letting go. Thank you for the joy of creation.”*
+_“This is now done—I’m releasing it and letting go. Thank you for the joy of creation.”_
 
 The key is recognising when your job is done—and realising it’s not your job to worry about how it’s received.
 
@@ -50,11 +50,11 @@ If you can truly embrace that, your creative output becomes easier to sustain. T
 
 **→ What I’m Loving**
 
-**⨀ *Dexter*, Season 7**
+**⨀ _Dexter_, Season 7**
 
 It’s getting intense, but we’re loving it. Marta tenses up during chase scenes, while I happily eat my cereal.
 
-I actually watched almost all of *Dexter* years ago but never finished it. I have this weird habit of leaving the last few episodes of a series unwatched… But this time, I’ll see it through.
+I actually watched almost all of _Dexter_ years ago but never finished it. I have this weird habit of leaving the last few episodes of a series unwatched… But this time, I’ll see it through.
 
 **⨀ Winter**
 
@@ -64,7 +64,7 @@ Now I’m fully into winter, embracing it, but also looking forward to spring: b
 
 ---
 
-Thanks for reading. I’ll send another email this week when *She Can Be* comes out.
+Thanks for reading. I’ll send another email this week when _She Can Be_ comes out.
 
 It’s been a great one to create—I started writing it 4 or 5 years ago, and now it’s finally coming out. Exciting times!
 

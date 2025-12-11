@@ -1,6 +1,6 @@
 ---
-title: "comer sin más"  
-permalink: "/comer/"  
+title: "comer sin más"
+permalink: "/comer/"
 date: 2024-04-30T15:27:00+02:00
 ---
 

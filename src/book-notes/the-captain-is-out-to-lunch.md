@@ -7,11 +7,11 @@ dateRead: 2023-11-14
 datePublished: 1998 (posthumous release by wife Linda & Robert Crumb)
 artwork: "/assets/images/book-notes/the-captain-is-out-to-lunch.jpg"
 synopsis: |
-    **The Captain Is Out to Lunch and the Sailors Have Taken Over the Ship** by Charles Bukowski is a collection of raw, reflective journal entries written during the final years of the author’s life. The entries offer an intimate look into Bukowski’s thoughts as he navigates old age, fame, and the routines of daily life.
+  **The Captain Is Out to Lunch and the Sailors Have Taken Over the Ship** by Charles Bukowski is a collection of raw, reflective journal entries written during the final years of the author’s life. The entries offer an intimate look into Bukowski’s thoughts as he navigates old age, fame, and the routines of daily life.
 
-    Through his trademark no-nonsense style, Bukowski writes about his passion for horse racing, his frustrations with humanity, the absurdities of fame, and the relentless march of time. He balances cynicism with moments of vulnerability and dark humour, reflecting on mortality and his waning energy while continuing to observe life with an unflinching eye.
+  Through his trademark no-nonsense style, Bukowski writes about his passion for horse racing, his frustrations with humanity, the absurdities of fame, and the relentless march of time. He balances cynicism with moments of vulnerability and dark humour, reflecting on mortality and his waning energy while continuing to observe life with an unflinching eye.
 
-    Illustrated with evocative artwork by Robert Crumb, the book is a snapshot of Bukowski’s world—a mix of grit, wit, and surprising tenderness. It’s a contemplative yet unfiltered reflection on aging, creativity, and the absurdity of existence.
+  Illustrated with evocative artwork by Robert Crumb, the book is a snapshot of Bukowski’s world—a mix of grit, wit, and surprising tenderness. It’s a contemplative yet unfiltered reflection on aging, creativity, and the absurdity of existence.
 ---
 
 I really enjoyed this. I’m not sure if Bukowski ever intended it to be read, but the way it’s written makes me think maybe he did.

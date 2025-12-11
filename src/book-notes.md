@@ -2,11 +2,15 @@
 layout: "base.njk"
 title: "Book Notes"
 hidePageTitle: false
+eleventyNavigation:
+  key: Book Notes
+  parent: Writing
+  order: 3
 ---
 
 Below you will find my {{ collections.booknotes | length }} book notes, sorted from newest to oldest.
 
-There are three sections in each book notes page: 
+There are three sections in each book notes page:
 
 - Metadata (book cover, title, author, publication date, date read)
 - Synopsis

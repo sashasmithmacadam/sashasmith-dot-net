@@ -7,7 +7,6 @@ hidePageTitle: false
 
 My {{ collections.now | length }} [now]({{ '/now/' | url }}) updates in reverse chronological order.
 
-
 <ul class="spaced-list">
 {% for now in collections.now %}
   <li><a href="{{ now.url }}">{{ now.data.title }}</a></li>

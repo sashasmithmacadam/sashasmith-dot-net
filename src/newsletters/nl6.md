@@ -28,7 +28,7 @@ Are you just seeing? Or are you witnessing life like an artist?
 
 Read (or watch!) and let me know which stage of the artist’s journey you’re in (anyone can be an artist) → [sashasmith.net/witness]({{ '/witness/' | url }}) or [https://youtu.be/pDtcGrB8LeE](https://youtu.be/pDtcGrB8LeE)
 
-**⨀ *She Can Be* – Official Video (Out Friday!)**
+**⨀ _She Can Be_ – Official Video (Out Friday!)**
 
 We shot a video for [*She Can Be*]({{ '/scb/' | url }}) yesterday on a little dirt road I often walk [near Iribas](https://maps.app.goo.gl/aHQ1rjKPK61Zx5Hn6), close to where I live. It’s coming out this Friday.
 
@@ -66,4 +66,4 @@ We’ve loved [Ocie](https://open.spotify.com/artist/5jbk18C7YXRcEZ) for a long 
 
 **Sash**
 
-P.S. *She Can Be* official video this Friday. Acoustic with Marta next Friday. New song the week after that. I’ll tell you the title next week 😉
+P.S. _She Can Be_ official video this Friday. Acoustic with Marta next Friday. New song the week after that. I’ll tell you the title next week 😉

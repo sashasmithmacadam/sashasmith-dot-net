@@ -1,6 +1,6 @@
 ---
-title: "cuatro o cinco ciclistas"  
-permalink: "/ciclistas/"  
+title: "cuatro o cinco ciclistas"
+permalink: "/ciclistas/"
 date: 2024-04-30T19:54:00+02:00
 ---
 

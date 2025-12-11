@@ -2,9 +2,12 @@
 layout: "base.njk"
 title: "Newsletter"
 hidePageTitle: false
+eleventyNavigation:
+  key: Newsletter
+  order: 5
 ---
 
-*The newsletter’s taking a short break while I finish up some projects.* *Subscribe below to get updates as soon as they’re ready.*
+_The newsletter’s taking a short break while I finish up some projects._ _Subscribe below to get updates as soon as they’re ready._
 
 <div class="callout">
 
@@ -25,11 +28,11 @@ It’s my lifeline for creating & connecting — the best way I’ve found to in
 
 **For →** The outsiders, the eccentrics, the crazies. As Bukowski said:
 
-> *“Some people never go crazy. What truly horrible lives they must lead.”*
+> _“Some people never go crazy. What truly horrible lives they must lead.”_
 
 **Length** → Blaise Pascal once said:
 
-> *“I have only made this letter longer because I have not had the time to make it shorter.”*
+> _“I have only made this letter longer because I have not had the time to make it shorter.”_
 
 My promise to you? I’ll put in the time to make each newsletter short but impactful. No algorithms, no noise → the best things I find and create, straight to your inbox.
 
@@ -38,15 +41,16 @@ My promise to you? I’ll put in the time to make each newsletter short but impa
 {% include "forms/form-convertkit-subscribe.njk" %}
 
 **Recent Issues** →
+
 <ul class="spaced-list">
 {% for newsletter in collections.newsletters %}
   <li><a href="{{ newsletter.url }}"><strong>{{ newsletter.data.title }}</strong></a></li>
 {% endfor %}
 </ul>
 
-*(Want to see all newsletter issues to date? Check out the [newsletter archive]({{ '/newsletter-archive/' | url }}).)*
+_(Want to see all newsletter issues to date? Check out the [newsletter archive]({{ '/newsletter-archive/' | url }}).)_
 
 **Lastly** → let's be loud together. Please [**reach out**]({{ '/contact/' | url }}) — reply to any newsletter or email me → sasha@sashasmith.net
 
-> *“If you ask me what I came to do in this world, I, an artist, will answer you: I am here to live out loud.”*  
-― Émile Zola
+> _“If you ask me what I came to do in this world, I, an artist, will answer you: I am here to live out loud.”_  
+> ― Émile Zola

@@ -1,6 +1,6 @@
 ---
-title: "mi odio hacia los chavales con motos ruidosas"  
-permalink: "/motos-ruidosas/"  
+title: "mi odio hacia los chavales con motos ruidosas"
+permalink: "/motos-ruidosas/"
 date: 2024-04-30T20:19:00+02:00
 ---
 

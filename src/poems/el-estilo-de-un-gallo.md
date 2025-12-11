@@ -1,6 +1,6 @@
 ---
-title: "el estilo de un gallo"  
-permalink: "/gallo/"  
+title: "el estilo de un gallo"
+permalink: "/gallo/"
 date: 2024-04-30T19:43:00+02:00
 ---
 

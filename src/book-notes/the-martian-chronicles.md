@@ -7,13 +7,13 @@ dateRead: 2023-04-24
 datePublished: 1950
 artwork: "/assets/images/book-notes/the-martian-chronicles.jpg"
 synopsis: |
-    **The Martian Chronicles** by Ray Bradbury is a collection of interconnected short stories that chronicle humanity’s colonisation of Mars and the resulting interactions with the planet’s native inhabitants. Blending science fiction with poetic prose, the book explores themes of exploration, colonisation, cultural clash, and the consequences of human hubris.
+  **The Martian Chronicles** by Ray Bradbury is a collection of interconnected short stories that chronicle humanity’s colonisation of Mars and the resulting interactions with the planet’s native inhabitants. Blending science fiction with poetic prose, the book explores themes of exploration, colonisation, cultural clash, and the consequences of human hubris.
 
-    The stories begin with Earth’s attempts to explore and settle Mars. Early expeditions meet resistance from the Martians, a mysterious and telepathic race, leading to eerie and tragic encounters. As Earth faces its own troubles, including impending nuclear war, humans succeed in establishing colonies on Mars, transforming the red planet into a reflection of Earth.
+  The stories begin with Earth’s attempts to explore and settle Mars. Early expeditions meet resistance from the Martians, a mysterious and telepathic race, leading to eerie and tragic encounters. As Earth faces its own troubles, including impending nuclear war, humans succeed in establishing colonies on Mars, transforming the red planet into a reflection of Earth.
 
-    However, this colonisation comes at a cost. The native Martians are nearly wiped out by disease, and the human settlers bring their own flaws—greed, violence, and a lack of respect for the alien environment. As tensions on Earth escalate, the settlers face a reckoning when nuclear war breaks out, leaving Mars isolated and abandoned by many.
+  However, this colonisation comes at a cost. The native Martians are nearly wiped out by disease, and the human settlers bring their own flaws—greed, violence, and a lack of respect for the alien environment. As tensions on Earth escalate, the settlers face a reckoning when nuclear war breaks out, leaving Mars isolated and abandoned by many.
 
-    In its haunting conclusion, the book suggests that humanity’s hope for renewal lies not in escaping to new worlds but in confronting its own nature. The Martian Chronicles is a timeless meditation on the fragility of civilisation and the enduring allure of the unknown.
+  In its haunting conclusion, the book suggests that humanity’s hope for renewal lies not in escaping to new worlds but in confronting its own nature. The Martian Chronicles is a timeless meditation on the fragility of civilisation and the enduring allure of the unknown.
 ---
 
 My friend Adri gave me this book for my birthday. I started reading it without realising it was **a collection of short stories,** which threw me off at first. I enjoy short stories, but when they revolve around a similar subject, I usually prefer a cohesive novel that ties everything together.

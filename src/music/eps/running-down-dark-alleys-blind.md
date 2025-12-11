@@ -3,7 +3,7 @@ hidden: true
 title: "Running Down Dark Alleys Blind"
 permalink: "/rddab/"
 releaseType: "ep"
-date: 
+date:
 artwork: ""
 spotify: ""
 appleMusic: ""
