@@ -1,5 +1,5 @@
 {
-    "layout": "painting.njk",
-    "tags": "paintings",
-    "hidePageTitle": true
+  "layout": "painting.njk",
+  "tags": "paintings",
+  "hidePageTitle": true
 }

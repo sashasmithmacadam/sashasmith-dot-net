@@ -8,7 +8,7 @@ Hey, it’s [Sash]({{ '/about/' | url }}):
 
 **Resistance (capital R) is an old friend.** A familiar shadow that arrives when something important is on the verge of being finished.
 
-I’ve felt it this past week. It crept in as I worked on my next song, *Childhood Naps*.
+I’ve felt it this past week. It crept in as I worked on my next song, _Childhood Naps_.
 
 It came from the inside—the reluctance to let go of something that, once released, is no longer truly mine.
 
@@ -26,7 +26,7 @@ Here’s how my own wrestling match with Resistance went this week.
 
 **→ What I’m Creating — Ode to Resistance**
 
-At a breaking point, I stopped fighting and instead wrote directly *to* Resistance. The result was a kind of **poem-essay**, something I didn’t plan, but that feels like it will stay with me for a long time.
+At a breaking point, I stopped fighting and instead wrote directly _to_ Resistance. The result was a kind of **poem-essay**, something I didn’t plan, but that feels like it will stay with me for a long time.
 
 Read it here → [Ode to Resistance]({{ '/ode-to-resistance/' | url }})
 
@@ -44,7 +44,7 @@ But sometimes, what we need is **to surrender to the moment.**
 
 Not in defeat, but in **curiosity**.
 
-In my case, instead of forcing my way through the work, I sat down and wrote *to* Resistance. And in doing so, I found my way forward.
+In my case, instead of forcing my way through the work, I sat down and wrote _to_ Resistance. And in doing so, I found my way forward.
 
 Resistance will always return, but I’ll always have this piece of writing now. And I like that.
 
@@ -56,7 +56,7 @@ Maybe next time you feel stuck, instead of pushing harder, **pause. Listen. Writ
 
 **⨀ Seeing My Cats Explore the Garden**
 
-We took [Snowy]({{ '/about/#personal' | url }}) out this morning, and she was loving all the new smells. She roamed, sniffed, took it all in. And in the end, she just laid out in the sun, happy. Cats *get* life on a different level—they just *know* what’s up.
+We took [Snowy]({{ '/about/#personal' | url }}) out this morning, and she was loving all the new smells. She roamed, sniffed, took it all in. And in the end, she just laid out in the sun, happy. Cats _get_ life on a different level—they just _know_ what’s up.
 
 **⨀ Dexter**
 

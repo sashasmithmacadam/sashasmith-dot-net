@@ -12,7 +12,7 @@ Here are a few things worth sharing this week:
 
 **→ What I’m Creating**
 
-**⨀ [Official Video](https://youtu.be/HWtAdLEc5zE) for *She Can Be***
+**⨀ [Official Video](https://youtu.be/HWtAdLEc5zE) for _She Can Be_**
 
 We filmed it on a dirt road in Iribas, near where we live.
 
@@ -28,7 +28,7 @@ Watch it here → [https://youtu.be/HWtAdLEc5zE](https://youtu.be/HWtAdLEc5zE)
 
 As promised last week, I’ll tell you the next song title:
 
-*Childhood Naps*
+_Childhood Naps_
 
 Hoping to release it by the end of February—still lots of work to do though, so we’ll see.
 
@@ -44,29 +44,29 @@ But over the years, I’ve learned that sticking to the plan, day in and day out
 
 This isn’t new wisdom. Aristotle said it well:
 
-*“We are what we repeatedly do. Excellence, then, is not an act, but a habit.”*
+_“We are what we repeatedly do. Excellence, then, is not an act, but a habit.”_
 
 Right now, I’m using a system that’s working better than past approaches: a combination of [Cal Newport’s daily time-blocking, weekly planning, and seasonal strategic plans](https://www.youtube.com/watch?v=3FipKTzkTD4). If you’re interested, I can expand on this in a future newsletter.
 
 A few more quotes on consistency, endurance, and discipline:
 
-> *“Perfection is attained by slow degrees; it requires the hand of time.”* – Voltaire
+> _“Perfection is attained by slow degrees; it requires the hand of time.”_ – Voltaire
 
-> *“Fortune favours the prepared mind.”* – Louis Pasteur
+> _“Fortune favours the prepared mind.”_ – Louis Pasteur
 
-> *“Energy and persistence conquer all things.”* – Benjamin Franklin
+> _“Energy and persistence conquer all things.”_ – Benjamin Franklin
 
-> *“Courage is not having the strength to go on; it is going on when you don’t have the strength.”* – Theodore Roosevelt
+> _“Courage is not having the strength to go on; it is going on when you don’t have the strength.”_ – Theodore Roosevelt
 
-> *“A journey of a thousand miles begins with a single step.”* – Lao Tzu
+> _“A journey of a thousand miles begins with a single step.”_ – Lao Tzu
 
-> *“He conquers who endures.”* – Persius
+> _“He conquers who endures.”_ – Persius
 
-> *“First say to yourself what you would be; and then do what you have to do.”* – Epictetus
+> _“First say to yourself what you would be; and then do what you have to do.”_ – Epictetus
 
-> *“Progress is not achieved by luck or accident, but by working on yourself daily.”* – Epictetus
+> _“Progress is not achieved by luck or accident, but by working on yourself daily.”_ – Epictetus
 
-> *“No great thing is created suddenly, any more than a bunch of grapes or a fig. If you tell me that you desire a fig, I answer you that there must be time. Let it first blossom, then bear fruit, then ripen.”* – Epictetus
+> _“No great thing is created suddenly, any more than a bunch of grapes or a fig. If you tell me that you desire a fig, I answer you that there must be time. Let it first blossom, then bear fruit, then ripen.”_ – Epictetus
 
 ---
 
@@ -98,7 +98,6 @@ Hope winter’s treating you well.
 
 Let me know if you have productivity or organization systems that work for you—I geek out on this stuff and love learning new ways to approach it.
 
-
 **Sash**
 
-P.S. Filming an acoustic video of *She Can Be* with Marta soon. Stay tuned on the [YouTube channel](https://www.youtube.com/@SashaSmithXYZ).
+P.S. Filming an acoustic video of _She Can Be_ with Marta soon. Stay tuned on the [YouTube channel](https://www.youtube.com/@SashaSmithXYZ).

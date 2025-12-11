@@ -1,6 +1,6 @@
 ---
-title: "el sol en la cara"  
-permalink: "/sol/"  
+title: "el sol en la cara"
+permalink: "/sol/"
 date: 2024-04-30T23:11:00+02:00
 ---
 

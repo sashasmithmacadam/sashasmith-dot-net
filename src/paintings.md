@@ -3,8 +3,8 @@ layout: "base.njk"
 title: "Paintings"
 hidePageTitle: false
 eleventyNavigation:
-    key: Paintings
-    order: 4
+  key: Paintings
+  order: 4
 ---
 
 {% for painting in collections.paintings %}
@@ -15,13 +15,13 @@ eleventyNavigation:
         <a class="painting-title" href="{{ painting.url }}">{{ painting.data.title }}</a>
 
         <div class="painting-metadata">
-            
+
             <p>{{ painting.data.dateStarted }} – {{ painting.data.dateEnded | yearSimple }}</p>
 
             <p>{{ painting.data.medium }}</p>
 
             <p>{{ painting.data.dimensions }}</p>
-        
+
         </div>
 
     </div>

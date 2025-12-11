@@ -24,7 +24,7 @@ Spoiler: It’s not about the numbers.
 
 Read it here → [sashasmith.net/success]({{ '/success/' | url }})
 
-**⨀ Book Notes —** ***Zorba the Greek***
+**⨀ Book Notes —** **_Zorba the Greek_**
 
 I love [re-reading this]({{ '/zorba/' | url }}) at the start of a new year.
 
@@ -34,7 +34,7 @@ Explore Zorba’s world → [sashasmith.net/zorba]({{ '/zorba/' | url }})
 
 **⨀ What I’m Loving**
 
-I’m rewatching *Dexter*, and it’s as twisted and brilliant as I remembered.
+I’m rewatching _Dexter_, and it’s as twisted and brilliant as I remembered.
 
 If you’re looking for something binge-worthy, this might be it.
 
@@ -42,7 +42,7 @@ If you’re looking for something binge-worthy, this might be it.
 
 Crafting the aesthetic for [my new single]({{ '/fp/' | url }}) and EP artwork has been a joy.
 
-It’s about slowing down, truly [*seeing*]({{ '/ojo/' | url }}) the world (not just *looking* at it), and capturing its beauty in art.
+It’s about slowing down, truly [*seeing*]({{ '/ojo/' | url }}) the world (not just _looking_ at it), and capturing its beauty in art.
 
 I’m writing my next essay on this — being an artist isn’t about identity or output, it’s more so a state of being, a way of witnessing life unfold.
 
@@ -62,4 +62,4 @@ If you enjoyed this issue, it would mean a lot if you forwarded it to someone yo
 
 I’m no longer afraid to [ask](https://www.youtube.com/watch?v=xMj_P_6H69g) directly — whether it’s sharing my art or this newsletter — because I really do believe in [human connection over algorithms]({{ '/about/#new-era' | url }}).
 
-Thank you for being here. It *truly* means everything to me.
+Thank you for being here. It _truly_ means everything to me.

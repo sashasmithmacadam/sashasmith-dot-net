@@ -16,13 +16,13 @@ But now, time to slip back into our rhythm! Here’s what’s been [happening on
 
 **⨀ What I’m** [**Creating**]({{ '/projects/' | url }})
 
-→ [*Fucking Perfect* — Official Video](https://youtu.be/ZxAR0LdQ8OM)
+→ [_Fucking Perfect_ — Official Video](https://youtu.be/ZxAR0LdQ8OM)
 
 I just shot an [official video](https://youtu.be/ZxAR0LdQ8OM) at sunset, right outside my studio. It’s the same view I’m lucky to see every day while I work — today, a mysterious haze; on filming day, a symphony of orange and pink.
 
 Watch it here: [sashasmith.net/fp]({{ '/fp/' | url }})
 
-→ Next Track — *She Can Be*
+→ Next Track — _She Can Be_
 
 [Currently]({{ '/2025-01-07/' | url }}) in the works.
 
@@ -58,7 +58,7 @@ Think of someone like [Akira Nakai](https://youtu.be/qm95f86a4Hw?si=U5VdEmYzjqNG
 
 **⨀ What I’m Loving**
 
-My sister gave me Rick Rubin’s [*The Creative Act*](https://www.goodreads.com/book/show/60965426-the-creative-act) for Christmas, and now feels like the perfect time to really savour our holiday gifts — to appreciate why our loved ones chose them and see how they fit into our lives.
+My sister gave me Rick Rubin’s [_The Creative Act_](https://www.goodreads.com/book/show/60965426-the-creative-act) for Christmas, and now feels like the perfect time to really savour our holiday gifts — to appreciate why our loved ones chose them and see how they fit into our lives.
 
 The book’s fantastic. It beautifully captures many of the ways I feel about making music and art.
 

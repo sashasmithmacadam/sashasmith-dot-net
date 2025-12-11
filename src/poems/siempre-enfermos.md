@@ -1,6 +1,6 @@
 ---
-title: "por eso estaban siempre enfermos"  
-permalink: "/siempre-enfermos/"  
+title: "por eso estaban siempre enfermos"
+permalink: "/siempre-enfermos/"
 date: 2024-04-30T23:58:00+02:00
 ---
 

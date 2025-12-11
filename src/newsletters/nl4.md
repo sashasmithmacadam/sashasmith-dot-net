@@ -16,7 +16,7 @@ Their lives were short but incredibly impactful. It’s inspiring to think of al
 
 **→ What I’m Creating**
 
-**⨀ New Essay → *“[The Rhythm of Creativity]({{ '/rhythm/' | url }})”***
+**⨀ New Essay → _“[The Rhythm of Creativity]({{ '/rhythm/' | url }})”_**
 
 This week, I reflected on the contraction (artistic output) and expansion (rest) of an artist’s soul.
 
@@ -26,9 +26,9 @@ With time, I’ve learnt that nonstop contraction leads to burnout. I still slip
 
 I uploaded [seven new poems]({{ '/poetry/' | url }}) to my website.
 
-My personal favourite → *“[el sol en la cara]({{ '/sol/' | url }})”*
+My personal favourite → _“[el sol en la cara]({{ '/sol/' | url }})”_
 
-**⨀ Next Single → *She Can Be***
+**⨀ Next Single → _She Can Be_**
 
 My goal is to release this by the end of January (which is coming up fast!).
 
@@ -46,7 +46,7 @@ I just posted [notes]({{ '/pixels/' | url }}) on this fascinating book about the
 
 It’s a much more non-linear creative process than music, painting, or writing.
 
-Seeing the contrast between big studio projects (*Uncharted*) and indie solo efforts (*Stardew Valley*) was especially eye-opening.
+Seeing the contrast between big studio projects (_Uncharted_) and indie solo efforts (_Stardew Valley_) was especially eye-opening.
 
 As a creator, I’m naturally drawn to the indie approach — the scrappy determination and personal vision really resonate with me.
 
@@ -77,7 +77,7 @@ Thanks for being here with me. Signing off from Lekunberri now and heading to Do
 A closing thought:
 
 > “Don’t fear failure. — Not failure, but low aim, is the crime. In great attempts it is glorious even to fail.”  
-~ Bruce Lee
+> ~ Bruce Lee
 
 A fitting reminder as I celebrate another year of life — and another week of creating, learning, and growing.
 
@@ -85,4 +85,4 @@ And happy one-month birthday to this little newsletter — today’s the 4th iss
 
 **Sash**
 
-P.S. How old are you? And when is *your* birthday?
+P.S. How old are you? And when is _your_ birthday?

@@ -1,4 +1,4 @@
 {
-    "layout": "now.njk",
-    "tags": "now"
+  "layout": "now.njk",
+  "tags": "now"
 }

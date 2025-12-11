@@ -2,26 +2,26 @@
 layout: "base.njk"
 title: "About"
 eleventyNavigation:
-    key: About
-    order: 7
+  key: About
+  order: 7
 ---
 
-Looking for the quick *bird’s-eye view*? Head to the → **highlights**.
+Looking for the quick _bird’s-eye view_? Head to the → **highlights**.
 
-Craving the juicy details? Click the **+ button** to expand each one and dive into the inside scoop (or, as we like to call it here: *the deets*).
+Craving the juicy details? Click the **+ button** to expand each one and dive into the inside scoop (or, as we like to call it here: _the deets_).
 
 Ready? Buckle up:
 
 <section class="accordion">
 {% accordionItem "Sasha Smith" %}
 
-Well… actually, it’s Sasha *Kristen* Smith.
+Well… actually, it’s Sasha _Kristen_ Smith.
 
 Yep, not one, but two ~~girl~~ unisex names. I think my parents were secretly hoping for a girl — can’t blame them!
 
-But one unisex name is enough, so I go by Sasha Smith — didn’t want to risk appearing *too cool* by using both of them…
+But one unisex name is enough, so I go by Sasha Smith — didn’t want to risk appearing _too cool_ by using both of them…
 
-It’s definitely not because I got teased about it in school. And I’m absolutely *not* overcompensating by explaining it here. Nope, nothing like that.
+It’s definitely not because I got teased about it in school. And I’m absolutely _not_ overcompensating by explaining it here. Nope, nothing like that.
 
 Onwards.
 
@@ -100,15 +100,15 @@ Tools I use:
 
 - **Digital Notes** → Obsidian (for notes, tasks, and plans).
 - **Physical Notebooks** →
-    - **Journal**: Used *[The Daily Stoic Journal](https://dailystoic.com/daily-stoic-journal/)* (2018--2023); switched to [Rhodia](https://rhodiapads.com/collections_dot_rhodiarama_soft.php) notebooks in 2024 for more flexibility.
-    - **Pocket Notebook**: Inspired by [Aaron Draplin](https://www.draplin.com/field-notes/history), I take one everywhere. Chaotic but great for thinking on the go.
-    - **Exercise Log**: Tracking every workout, a habit I picked up from my dad and his detailed running logs.
-    - **Life Moments**: A mini “greatest hits” of big life events (when I remember to write them down).
-    - **Routines & Habits**: To track what works and why past attempts failed.
-    - **Running, Cycling, Swimming Notes**: Technique tips, mental breakthroughs, etc.
-    - **Songwriting Notebooks**: Mainly [Moleskine XL Ruled Cahier Journals](https://www.moleskine.com/shop/notebooks/journals/cahier-journals/cahier-journals-black-9788883705014.html). Black.
-    - **Project Notebooks**: Big projects get their own. I'm currently tracking an EP and LP using [Moleskine L Ruled Cahier Journals](https://www.moleskine.com/shop/notebooks/journals/cahier-journals/cahier-journals-kraft-brown-9788883705069.html). Kraft Brown.
-    - **Labels**: I use a [Dymo Omega Embosser](https://duckduckgo.com/?q=dymo+omega+embosser&atb=v316-1&iax=images&ia=images) for labeling. Essential once you have lots of notebooks — plus, I'm a sucker for the vintage vibe!
+  - **Journal**: Used *[The Daily Stoic Journal](https://dailystoic.com/daily-stoic-journal/)* (2018--2023); switched to [Rhodia](https://rhodiapads.com/collections_dot_rhodiarama_soft.php) notebooks in 2024 for more flexibility.
+  - **Pocket Notebook**: Inspired by [Aaron Draplin](https://www.draplin.com/field-notes/history), I take one everywhere. Chaotic but great for thinking on the go.
+  - **Exercise Log**: Tracking every workout, a habit I picked up from my dad and his detailed running logs.
+  - **Life Moments**: A mini “greatest hits” of big life events (when I remember to write them down).
+  - **Routines & Habits**: To track what works and why past attempts failed.
+  - **Running, Cycling, Swimming Notes**: Technique tips, mental breakthroughs, etc.
+  - **Songwriting Notebooks**: Mainly [Moleskine XL Ruled Cahier Journals](https://www.moleskine.com/shop/notebooks/journals/cahier-journals/cahier-journals-black-9788883705014.html). Black.
+  - **Project Notebooks**: Big projects get their own. I'm currently tracking an EP and LP using [Moleskine L Ruled Cahier Journals](https://www.moleskine.com/shop/notebooks/journals/cahier-journals/cahier-journals-kraft-brown-9788883705069.html). Kraft Brown.
+  - **Labels**: I use a [Dymo Omega Embosser](https://duckduckgo.com/?q=dymo+omega+embosser&atb=v316-1&iax=images&ia=images) for labeling. Essential once you have lots of notebooks — plus, I'm a sucker for the vintage vibe!
 
 I've always written privately, but I've resisted sharing it. Part of me clung to being *just* a musician. Another part doubted my essays, poems, and stories would hold weight.
 
@@ -196,7 +196,7 @@ And I like that — [the fringes of society](https://seths.blog/2024/10/amplify
 Cal Newport, in *[Digital Minimalism](https://www.goodreads.com/book/show/40672036-digital-minimalism)*, references Kethledge and Erwin's definition of solitude from *[Lead Yourself First](https://www.goodreads.com/book/show/31451193-lead-yourself-first)*:
 
 > “Solitude can be found as readily while sitting alone in a restaurant as it can on Mount Rainier.
-> 
+>
 > It is not an objective concept but a subjective one.
 >
 > It is, simply, **a subjective state of mind, in which the mind, isolated from input from other minds,** works through a problem on its own.”
@@ -259,19 +259,17 @@ They always had books going, each with their own favourite genres. Seeing that a
 My reading habits and taste continually evolve, but here are some favourites:
 
 - **A couple of novels:**
-    - *[Zorba the Greek](https://sashasmith.net/booknotes/zorba/)*
-    - *[A Confederacy of Dunces](https://www.goodreads.com/book/show/310612.A_Confederacy_of_Dunces)*
+  - _[Zorba the Greek](https://sashasmith.net/booknotes/zorba/)_
+  - _[A Confederacy of Dunces](https://www.goodreads.com/book/show/310612.A_Confederacy_of_Dunces)_
 - **A couple of authors:**
-    - [Charles Bukowski](https://www.goodreads.com/author/show/13275.Charles_Bukowski) (especially his [poetry](https://www.goodreads.com/book/show/70884.The_Last_Night_of_the_Earth_Poems))
-    - [Kurt Vonnegut](https://www.goodreads.com/author/show/2778055.Kurt_Vonnegut_Jr_) *([Slaughterhouse-Five](https://www.goodreads.com/book/show/4981.Slaughterhouse_Five) is one of the best books every written)*
+  - [Charles Bukowski](https://www.goodreads.com/author/show/13275.Charles_Bukowski) (especially his [poetry](https://www.goodreads.com/book/show/70884.The_Last_Night_of_the_Earth_Poems))
+  - [Kurt Vonnegut](https://www.goodreads.com/author/show/2778055.Kurt_Vonnegut_Jr_) *([Slaughterhouse-Five](https://www.goodreads.com/book/show/4981.Slaughterhouse_Five) is one of the best books every written)*
 - **A couple of philosophers:**
-    - [Friedrich Nietzsche](https://www.goodreads.com/author/show/1938.Friedrich_Nietzsche) (no one packs more into a sentence)
-    - [Albert Camus](https://www.goodreads.com/author/show/957894.Albert_Camus)
+  - [Friedrich Nietzsche](https://www.goodreads.com/author/show/1938.Friedrich_Nietzsche) (no one packs more into a sentence)
+  - [Albert Camus](https://www.goodreads.com/author/show/957894.Albert_Camus)
 - **A couple of non-fiction authors:**
-    - [Cal Newport](https://calnewport.com/writing/)
-    - [Austin Kleon](https://austinkleon.com/books/)
-
-
+  - [Cal Newport](https://calnewport.com/writing/)
+  - [Austin Kleon](https://austinkleon.com/books/)
 
 How I read changes — sometimes I'm all about my Kindle, other times I want nothing but hardcovers. But the format doesn't matter. What matters is wrestling with the ideas, [having conversations with the authors in my notebooks]({{ '/book-notes/' | url }}), and translating those learnings into my life.
 
@@ -358,20 +356,20 @@ These things have taken too much of my time (and money) and given too little in 
 From now on:
 
 - **I'm creating and releasing more art:**
-    - [Music]({{ '/music/' | url }})
-    - [Paintings]({{ '/paintings/' | url }})
-    - [Poetry]({{ '/poetry/' | url }})
+  - [Music]({{ '/music/' | url }})
+  - [Paintings]({{ '/paintings/' | url }})
+  - [Poetry]({{ '/poetry/' | url }})
 - **I'm carving out my own space online:**
-    - Building [my own website]({{ '//' | url }})
-    - Sharing my thoughts in my [essays]({{ '/essays/' | url }})
-    - Sending a [weekly newsletter]({{ '/newsletter/' | url }})
+  - Building [my own website]({{ '//' | url }})
+  - Sharing my thoughts in my [essays]({{ '/essays/' | url }})
+  - Sending a [weekly newsletter]({{ '/newsletter/' | url }})
 - **I'm shifting focus:**
-    - Off social media
-    - [Connecting]({{ '/contact/' | url }}) with interesting people every week
-    - Trusting word-of-mouth over algorithms — [actively asking](https://www.youtube.com/watch?v=xMj_P_6H69g) my [true fans](https://kk.org/thetechnium/1000-true-fans/) to share my work
+  - Off social media
+  - [Connecting]({{ '/contact/' | url }}) with interesting people every week
+  - Trusting word-of-mouth over algorithms — [actively asking](https://www.youtube.com/watch?v=xMj_P_6H69g) my [true fans](https://kk.org/thetechnium/1000-true-fans/) to share my work
 - **I'm here for other artists:**
-    - [Sharing]({{ '/essays/' | url }}) this alternative path
-    - [Helping anyone]({{ '/contact/' | url }}) who wants to take it
+  - [Sharing]({{ '/essays/' | url }}) this alternative path
+  - [Helping anyone]({{ '/contact/' | url }}) who wants to take it
 
 This shift has been building inside me for years — a radical realignment to do the work I want to do, leaving behind the distractions of the unimportant.
 

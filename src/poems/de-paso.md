@@ -1,6 +1,6 @@
 ---
-title: "tranquis, que sólo estoy de paso"  
-permalink: "/de-paso/"  
+title: "tranquis, que sólo estoy de paso"
+permalink: "/de-paso/"
 date: 2024-04-30T23:14:00+02:00
 ---
 

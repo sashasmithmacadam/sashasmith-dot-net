@@ -1,6 +1,6 @@
 ---
-title: "la piña y la abeja"  
-permalink: "/la-pina-y-la-abeja/"  
+title: "la piña y la abeja"
+permalink: "/la-pina-y-la-abeja/"
 date: 2024-04-30T19:32:00+02:00
 ---
 

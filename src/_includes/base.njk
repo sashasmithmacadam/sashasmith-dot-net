@@ -26,7 +26,7 @@
 
             <nav class="site-nav">
                 <!-- Mobile Menu Toggle -->
-                <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle hide-desktop" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -37,7 +37,7 @@
                     <ul>
                         {% for item in collections.all | eleventyNavigation %}
                         <li class="
-                            nav-item 
+                            nav-item
                             {% if page.url == item.url %}active{% endif %} 
                             {% if item.children and item.children | length > 0 %}has-children{% endif %}
                         ">
@@ -159,6 +159,7 @@
                 parentLi.classList.toggle("active");   // rotate arrow
             });
         });
+
     </script>
 </body>
 </html>

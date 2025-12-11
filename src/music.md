@@ -3,8 +3,8 @@ layout: "base.njk"
 title: "Music"
 hidePageTitle: false
 eleventyNavigation:
-    key: Music
-    order: 2
+  key: Music
+  order: 2
 ---
 
 You can listen to all my releases on: [Spotify](https://open.spotify.com/artist/6zskAcFVQdOflTkSPOqk0H?si=ATz1GGY9TjGAvqeRVcRGmA), [Apple Music](https://music.apple.com/us/artist/sasha-smith/1348002347), [YouTube](https://www.youtube.com/sashasmithxyz), and [Bandcamp](https://sashasmith.bandcamp.com/).
@@ -38,6 +38,7 @@ You can listen to all my releases on: [Spotify](https://open.spotify.com/artist/
             </article>
         {% endif %}
     {% endfor %}
+
 </div>
 
 <hr class="footer-hr">

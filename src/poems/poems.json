@@ -1,5 +1,5 @@
 {
-    "layout": "poem.njk",
-    "tags": "poem",
-    "hidePageTitle": true
+  "layout": "poem.njk",
+  "tags": "poem",
+  "hidePageTitle": true
 }

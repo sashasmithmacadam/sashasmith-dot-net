@@ -3,15 +3,15 @@ layout: "base.njk"
 title: "Contact"
 hidePageTitle: false
 eleventyNavigation:
-    key: Contact
-    order: 8
+  key: Contact
+  order: 8
 ---
 
 Send me an email → sasha@sashasmith.net
 
 Please do reach out — I always reply and genuinely love meeting new people.
 
-*(I will now proceed to geek out in a most proper old brit gent manner — which is the main reason I wanted to create a contact page instead of just having a mailto link.)*
+_(I will now proceed to geek out in a most proper old brit gent manner — which is the main reason I wanted to create a contact page instead of just having a mailto link.)_
 
 🧐 Why, my most distinguished Sir or Lady, might you wish to contact me?
 
@@ -28,6 +28,6 @@ Well, perhaps to:
 
 I look forward to your correspondence — let's have a proper chat!
 
-*(Geek-athon concluded.)*
+_(Geek-athon concluded.)_
 
 Seriously, email me and let's chat → sasha@sashasmith.net

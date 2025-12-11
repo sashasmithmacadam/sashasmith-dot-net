@@ -1,6 +1,6 @@
 ---
-title: "3 respiraciones profundas"  
-permalink: "/respiraciones/"  
+title: "3 respiraciones profundas"
+permalink: "/respiraciones/"
 date: 2024-04-30T22:52:00+02:00
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "fan de la sincronía"  
-permalink: "/sincronia/"  
+title: "fan de la sincronía"
+permalink: "/sincronia/"
 date: 2024-04-30T16:50:00+02:00
 ---
 
