@@ -48,7 +48,7 @@ aparecerá en la ventana
 del pc  
 como por arte de magia  
 con nuevas líneas,  
-éstas líneas  
+estas líneas  
 que estoy escribiendo.
 
 soy fan de  

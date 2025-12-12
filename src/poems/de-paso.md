@@ -4,7 +4,7 @@ permalink: "/de-paso/"
 date: 2024-04-30T23:14:00+02:00
 ---
 
-me hace gracia ver como se  
+me hace gracia ver cómo se  
 esconden los animalitos  
 cuando paso andando  
 a su lado
