@@ -58,7 +58,7 @@ Or have a look around:
 
 - {% include "snippets/link-projects.njk" %}
 - {% include "snippets/link-now.njk" %}
-- {% include "snippets/link-deep-dive.njk" %}
+- {% include "snippets/link-about.njk" %}
 
 I also send occasional [email updates]({{ '/email-list/' | url }}) about new work. I’m not much of a social media person, so email is the best way to stay in the loop.
 

@@ -29,7 +29,7 @@ layout: base.njk
 {% set next = collections.newsletter[currentIndex + 1] %}
 {% set previous = collections.newsletter[currentIndex - 1] %}
 
-<nav class="newsletter-footer">
+<nav class="category-footer">
   {% if next %}
     <div><em>Next: <a href="{{ next.url }}">{{ next.data.title }}</a></em></div>
   {% endif %}

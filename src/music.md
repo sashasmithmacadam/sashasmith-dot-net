@@ -59,6 +59,6 @@ eleventyNavigation:
 
 {% set footerLinksMarkdown %}
 - {% include "snippets/link-projects.njk" %}
-- {% include "snippets/link-newsletter.njk" %}
+- {% include "snippets/link-email-list.njk" %}
 {% endset %}
 {{ footerLinksMarkdown | markdownify | safe }}

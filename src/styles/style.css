@@ -244,7 +244,7 @@ ul ul ul ul {
 }
 
 .spaced-list li {
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
 }
 
 /* ======================================================
@@ -473,7 +473,7 @@ th {
   min-width: 0;
   max-width: 100%;
   font-size: 1.05rem;
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-regular);
   line-height: 1;
 }
 
@@ -837,6 +837,11 @@ th {
   color: var(--color-accent);
 }
 
+/* Keep parent label neutral, but signal active child section via chevron color */
+.site-nav li.child-active > a .submenu-toggle {
+  color: var(--color-accent);
+}
+
 /* ============================
    Dropdown / Sub-Navigation
    ============================ */
@@ -926,9 +931,14 @@ footer {
 }
 
 .footer-hr {
-  height: 2px;
+  height: 1px;
   background-color: var(--font-body-color);
   margin: 1.5rem 0;
+}
+
+/* Space between per-page "next/previous/back" links and site footer */
+.category-footer {
+  margin-bottom: 1.5rem;
 }
 
 /* ======================================================
@@ -1042,7 +1052,7 @@ small {
     display: block;
     flex: 1 1 auto;
     min-width: 0;
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.3;
     text-align: left;
     padding-left: 1.05rem;

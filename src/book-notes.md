@@ -2,13 +2,7 @@
 layout: "base.njk"
 title: "Book Notes"
 hidePageTitle: false
-eleventyNavigation:
-  key: Book Notes
-  parent: Writing
-  order: 3
 ---
-
-Below you will find my {{ collections.booknotes | length }} book notes, sorted from newest to oldest.
 
 There are three sections in each book notes page:
 
@@ -26,6 +20,6 @@ If you have book recommendations → [email me]({{ '/contact/' | url }}) 📚
 
 <hr class="footer-hr">
 
-- {% include "snippets/link-newsletter.njk" %}
-- Read my essays → **[Essays]({{ '/essays/' | url }})**
+- {% include "snippets/link-email-list.njk" %}
+- {% include "snippets/link-essays.njk" %}
 - {% include "snippets/link-projects.njk" %}

@@ -6,8 +6,6 @@ hidePageTitle: false
 
 Here's a **selection** of my latest work.
 
-Inside each piece, you’ll find links to previous work and to the full archive for that category (right at the bottom of the page).
-
 {% set latestEssay = collections.essays[0] %}
 {% set latestPoem = collections.poems[0] %}
 {% set latestBooknote = collections.booknotes[0] %}
@@ -25,4 +23,4 @@ Or check out what I'm up to these days → <a href="{{ latestNow.url }}">**Now**
 <hr class="footer-hr">
 
 - {% include "snippets/link-contact.njk" %}
-- {% include "snippets/link-deep-dive.njk" %}
+- {% include "snippets/link-about.njk" %}

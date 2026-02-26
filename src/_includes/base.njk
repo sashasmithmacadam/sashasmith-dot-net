@@ -125,6 +125,7 @@
                             nav-item
                             {% if item.url == '/' %}nav-home{% endif %}
                             {% if page.url == item.url %}active{% endif %} 
+                            {% if item.title == 'Writing' and (page.url == '/essays/' or page.url == '/poetry/' or (tags and ('essays' in tags or 'poem' in tags))) %}child-active{% endif %}
                             {% if item.children and item.children | length > 0 %}has-children{% endif %}
                         ">
                             <a href="{{ item.url | url }}">
