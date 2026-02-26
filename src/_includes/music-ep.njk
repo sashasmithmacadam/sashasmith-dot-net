@@ -59,15 +59,16 @@ layout: "music-base.njk"
         <div class="release-tracks">
           <p><strong>Tracks:</strong></p>
           <ol>
+            {% set musicSongCollection = collections["music-song"] or [] %}
             {% for trackTitle in tracks %}
 
               {# Start with no match #}
               {% set matched = null %}
 
-              {# Try to find a matching single by title #}
-              {% for s in collections.singles %}
-                {% if matched == null and s.data.title == trackTitle %}
-                  {% set matched = s %}
+              {# Try to find a matching song page by title #}
+              {% for song in musicSongCollection %}
+                {% if matched == null and song.data.title == trackTitle %}
+                  {% set matched = song %}
                 {% endif %}
               {% endfor %}
 

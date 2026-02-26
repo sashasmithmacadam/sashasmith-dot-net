@@ -1,10 +1,10 @@
 ---
-hidden: true
+hidden: false
 title: "Running Down Dark Alleys Blind"
 permalink: "/rddab/"
 releaseType: "ep"
-date:
-artwork: ""
+date: 2026-02-27
+artwork: "/assets/images/music-artwork/running-down-dark-alleys-blind.jpg"
 spotify: ""
 appleMusic: ""
 youtube: ""

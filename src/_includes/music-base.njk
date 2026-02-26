@@ -21,12 +21,14 @@ layout: "base.njk"
 {% set previous = null %}
 {% set next = null %}
 
-{% if currentIndex > 0 %}
-  {% set previous = musicCollection[currentIndex - 1] %}
-{% endif %}
+{% if currentIndex >= 0 %}
+  {% if currentIndex > 0 %}
+    {% set previous = musicCollection[currentIndex - 1] %}
+  {% endif %}
 
-{% if currentIndex < (musicCollection | length) - 1 %}
-  {% set next = musicCollection[currentIndex + 1] %}
+  {% if currentIndex < (musicCollection | length) - 1 %}
+    {% set next = musicCollection[currentIndex + 1] %}
+  {% endif %}
 {% endif %}
 
 <hr class="footer-hr">

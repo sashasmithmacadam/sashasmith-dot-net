@@ -1,0 +1,6 @@
+{
+  "layout": "music-single.njk",
+  "releaseType": "track",
+  "tags": ["music", "music-track", "music-song"],
+  "hidePageTitle": true
+}
