@@ -120,6 +120,7 @@
                 <div class="nav-menu">
                     <ul>
                         {% for item in collections.all | eleventyNavigation %}
+                        {% if item.url != '/newsletter/' %}
                         <li class="
                             nav-item
                             {% if item.url == '/' %}nav-home{% endif %}
@@ -143,6 +144,7 @@
                                 </ul>
                             {% endif %}
                         </li>
+                        {% endif %}
                         {% endfor %}
                     </ul>
                 </div>

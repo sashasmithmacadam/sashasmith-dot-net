@@ -15,7 +15,7 @@ Other times I write to try and make sense of what’s going on in the world. Tha
 - Read my poems → **[Poetry]({{ '/poetry/' | url }})**
 - Read my book notes → **[Book Notes]({{ '/book-notes/' | url }})**
 
-I also send a [newsletter]({{ '/newsletter/' | url }}) you can subscribe to for free if you like my writing.
+If you like my writing, you can [join my email list]({{ '/email-list/' | url }}) for occasional updates.
 
 <hr class="footer-hr">
 

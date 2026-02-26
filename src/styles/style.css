@@ -291,7 +291,7 @@ h6 {
 
 /* Page title used inside layout (optional wrapper handles spacing) */
 .page-title {
-  margin-top: 0;
+  margin-top: 0.75rem;
   margin-bottom: 1.5rem;
   text-align: left;
 }
@@ -645,7 +645,7 @@ th {
 .music-list-item {
   display: flex;
   align-items: start;
-  gap: 0.5rem;
+  gap: 1rem;
   margin-bottom: 0;
 }
 
@@ -1201,6 +1201,15 @@ small {
   gap: 0.3rem;
 }
 
+.site-nav {
+  --scroll-icon-size-desktop: 0.7rem;
+  --scroll-icon-size-mobile: 1rem;
+}
+
+.site-nav ul::before {
+  font-size: var(--scroll-icon-size-desktop);
+}
+
 @media (max-width: 750px) {
   .site-nav {
     margin-top: 0.25rem;
@@ -1238,7 +1247,7 @@ small {
     content: "↔";
     flex: 0 0 auto;
     color: var(--color-muted);
-    font-size: 0.8rem;
+    font-size: var(--scroll-icon-size-mobile);
     line-height: 1;
   }
 

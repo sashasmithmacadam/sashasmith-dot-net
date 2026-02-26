@@ -57,7 +57,8 @@ eleventyNavigation:
 
 <hr class="footer-hr">
 
-<ul>
-  <li>{% include "snippets/link-projects.njk" %}</li>
-  <li>{% include "snippets/link-newsletter.njk" %}</li>
-</ul>
+{% set footerLinksMarkdown %}
+- {% include "snippets/link-projects.njk" %}
+- {% include "snippets/link-newsletter.njk" %}
+{% endset %}
+{{ footerLinksMarkdown | markdownify | safe }}

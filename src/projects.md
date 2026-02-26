@@ -12,16 +12,13 @@ Inside each piece, you’ll find links to previous work and to the full archive 
 {% set latestPoem = collections.poems[0] %}
 {% set latestBooknote = collections.booknotes[0] %}
 {% set latestPainting = collections.paintings[0] %}
-{% set latestNewsletter = collections.newsletters[0] %}
 {% set latestMusic = collections.music[0] %}
 {% set latestNow = collections.now[0] %}
 
 - **Music** → <a href="{{ latestMusic.url }}">{{ latestMusic.data.title }}</a>
-- **Essay** → <a href="{{ latestEssay.url }}">{{ latestEssay.data.title }}</a>
 - **Poem** → <a href="{{ latestPoem.url }}">{{ latestPoem.data.title }}</a>
-- **Book Notes** → <a href="{{ latestBooknote.url }}">{{ latestBooknote.data.title }}</a>
+- **Essay** → <a href="{{ latestEssay.url }}">{{ latestEssay.data.title }}</a>
 - **Painting** → <a href="{{ latestPainting.url }}">{{ latestPainting.data.title }}</a>
-- **Newsletter** → <a href="{{ latestNewsletter.url }}">{{ latestNewsletter.data.title }}</a>
 
 Or check out what I'm up to these days → <a href="{{ latestNow.url }}">**Now**</a>
 

@@ -362,7 +362,7 @@ From now on:
 - **I'm carving out my own space online:**
   - Building [my own website]({{ '//' | url }})
   - Sharing my thoughts in my [essays]({{ '/essays/' | url }})
-  - Sending a [weekly newsletter]({{ '/newsletter/' | url }})
+  - Sending occasional updates via my [email list]({{ '/email-list/' | url }})
 - **I'm shifting focus:**
   - Off social media
   - [Connecting]({{ '/contact/' | url }}) with interesting people every week
@@ -373,7 +373,7 @@ From now on:
 
 This shift has been building inside me for years — a radical realignment to do the work I want to do, leaving behind the distractions of the unimportant.
 
-I'm excited about what's ahead. I hope you'll [join me]({{ '/newsletter/' | url }}) on this journey.
+I'm excited about what's ahead. I hope you'll [join me]({{ '/email-list/' | url }}) on this journey.
 
 You're always welcome.
 
