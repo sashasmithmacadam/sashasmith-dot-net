@@ -40,17 +40,22 @@ layout: "music-base.njk"
     {% set youtubeLink = primaryParent.data.youtube %}
   {% endif %}
 
-  {# Title + badge (releaseType shown as a boxed badge) #}
+  {# Title + release meta row #}
   <h1 class="release-title">
     {{ title }}
     {% if releaseType %}
-      <span class="release-badge" aria-hidden="true">{{ releaseType }}</span>
+      <span class="release-badge release-badge-desktop" aria-hidden="true">{{ releaseType }}</span>
     {% endif %}
   </h1>
-
-    {# Release Year (you can move this elsewhere) #}
-  {% if date %}
-    <p class="release-meta">{{ date.getFullYear() }}</p>
+  {% if releaseType or date %}
+    <p class="release-header-row">
+      {% if releaseType %}
+        <span class="release-badge release-badge-mobile" aria-hidden="true">{{ releaseType }}</span>
+      {% endif %}
+      {% if date %}
+        <span class="release-year">{{ date.getFullYear() }}</span>
+      {% endif %}
+    </p>
   {% endif %}
 
   {# Listen Links (single-line, comma-separated) #}
