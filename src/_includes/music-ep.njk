@@ -2,18 +2,22 @@
 layout: "music-base.njk"
 ---
 
-  {# Title + badge (releaseType shown as a boxed badge) #}
+  {# Title + release meta row #}
   <h1 class="release-title">
     {{ title }}
     {% if releaseType %}
-      <span class="release-badge" aria-hidden="true">{{ releaseType }}</span>
+      <span class="release-badge release-badge-desktop" aria-hidden="true">{{ releaseType }}</span>
     {% endif %}
   </h1>
-
-
-  {# Release Year (you can move this elsewhere) #}
-  {% if date %}
-    <p class="release-meta">{{ date.getFullYear() }}</p>
+  {% if releaseType or date %}
+    <p class="release-header-row">
+      {% if releaseType %}
+        <span class="release-badge release-badge-mobile" aria-hidden="true">{{ releaseType }}</span>
+      {% endif %}
+      {% if date %}
+        <span class="release-year">{{ date.getFullYear() }}</span>
+      {% endif %}
+    </p>
   {% endif %}
 
 
@@ -59,15 +63,16 @@ layout: "music-base.njk"
         <div class="release-tracks">
           <p><strong>Tracks:</strong></p>
           <ol>
+            {% set musicSongCollection = collections["music-song"] or [] %}
             {% for trackTitle in tracks %}
 
               {# Start with no match #}
               {% set matched = null %}
 
-              {# Try to find a matching single by title #}
-              {% for s in collections.singles %}
-                {% if matched == null and s.data.title == trackTitle %}
-                  {% set matched = s %}
+              {# Try to find a matching song page by title #}
+              {% for song in musicSongCollection %}
+                {% if matched == null and song.data.title == trackTitle %}
+                  {% set matched = song %}
                 {% endif %}
               {% endfor %}
 

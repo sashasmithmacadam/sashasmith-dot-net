@@ -12,7 +12,3 @@ My {{ collections.newsletters | length }} newsletter issues in reverse chronolog
   <li>Issue No. {{ newsletter.data.number }} → <a href="{{ newsletter.url }}">{{ newsletter.data.title }}</a></li>
 {% endfor %}
 </ul>
-
-<hr class="footer-hr">
-
-{% include "snippets/link-newsletter-subscribe-callout.njk" %}

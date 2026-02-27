@@ -1,5 +1,5 @@
 {
   "layout": "music-single.njk",
-  "tags": ["singles", "music"],
+  "tags": ["singles", "music", "music-song"],
   "hidePageTitle": "true"
 }

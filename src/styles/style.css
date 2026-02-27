@@ -1,8 +1,5 @@
-/* ======================================================
-   Variables
-   ====================================================== */
+/* ===== Tokens ===== */
 :root {
-  /* Typography */
   --font-base-size: 18px;
   --font-base-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", sans-serif;
@@ -10,27 +7,23 @@
   --font-heading-color: #111827;
   --font-body-color: #222222;
 
-  /* Weights */
   --weight-regular: 400;
   --weight-medium: 500;
   --weight-bold: 700;
   --weight-black: 900;
 
-  /* Colors */
   --color-accent: #0969da;
   --color-accent-hover: #065bbb;
   --color-muted: #57606a;
   --color-muted-2: #6a737d;
-  --color-light-border: #f2f2f2;
+  --color-light-border: #d3d3d3;
   --color-table-border: #d1d5da;
   --color-bg-muted: #f6f8fa;
   --color-highlight: #fcbe11;
   --color-callout: #fcbf30a1;
-
-  /* Background */
   --background-color: #ffffff;
+  --figure-caption-color: #a8a8a8;
 
-  /* Layout / spacing */
   --content-width: 750px;
   --spacing-xxs: 0.25rem;
   --spacing-xs: 0.5rem;
@@ -39,109 +32,68 @@
   --spacing-lg: 2rem;
   --spacing-xlg: 2.5rem;
 
-  /* Images / figure */
-  --figure-caption-color: #a8a8a8;
+  --border-width: 1px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-pill: 999px;
+
+  --site-title-height: 3.5rem;
+  --site-title-height-mobile: 2.5rem;
+  --site-title-home-size: 3rem;
+  --site-title-breadcrumb-size: 2.25rem;
+  --site-title-mobile-size: 2rem;
+  --site-title-mobile-padding: 0.42rem 1.1rem 0.12rem;
+  --site-title-mobile-shift: -0.28em;
+  --site-title-breadcrumb-gap: 0.75rem;
+  --site-title-breadcrumb-gap-mobile: 0.3rem;
+
+  --breadcrumb-gap: 0.75rem;
+  --breadcrumb-row-gap: 0.25rem;
+  --breadcrumb-font-size: 1.05rem;
+  --breadcrumb-font-size-mobile: 1rem;
+  --breadcrumb-line-height: 1;
+  --breadcrumb-line-height-mobile: 1.3;
+  --breadcrumb-mobile-indent: 1.05rem;
+
+  --nav-margin-top: 0.75rem;
+  --nav-margin-top-mobile: 0.25rem;
+  --nav-padding-y: 0.75rem;
+  --nav-padding-y-mobile: 0.45rem;
+  --nav-gap: 2.5rem;
+  --nav-gap-mobile: 1.2rem;
+  --nav-link-size: 13px;
+  --nav-link-size-mobile: 14px;
+  --scroll-icon-size-desktop: 0.7rem;
+  --scroll-icon-size-mobile: 1rem;
+
+  --release-layout-gap: 2rem;
+  --release-layout-gap-mobile: 1.2rem;
+  --release-artwork-width: 350px;
+  --video-radius: var(--radius-md);
+  --music-list-gap: 2.4rem;
+  --music-list-gap-mobile: 2.5rem;
+  --music-item-gap: 1rem;
+  --music-item-gap-mobile: 0.5rem;
+  --media-max-width-mobile: 280px;
 }
 
-/* ======================================================
-   DARK MODE overrides
-   ====================================================== */
 .dark {
-  --font-heading-color: #e0e0e0; /* lighter gray for headings */
-  --font-body-color: #d6d6d6; /* slightly softer body text */
-
-  --color-accent: #6ea0ff; /* softer accent blue */
-  --color-accent-hover: #8cb8ff; /* lighter on hover */
-
-  --color-muted: #a0a8b0; /* muted text for secondary content */
-  --color-muted-2: #8c9298; /* even softer for smaller text */
-
-  --color-light-border: #444; /* subtle borders */
+  --font-heading-color: #e0e0e0;
+  --font-body-color: #d6d6d6;
+  --color-accent: #6ea0ff;
+  --color-accent-hover: #8cb8ff;
+  --color-muted: #a0a8b0;
+  --color-muted-2: #8c9298;
+  --color-light-border: #444;
   --color-table-border: #555;
-
-  --color-bg-muted: #2a2a2a; /* soft dark gray for code blocks, etc. */
-  --background-color: #1f1f1f; /* main background softer black */
-
-  --color-highlight: #d8b467; /* soft yellow highlight */
-
+  --color-bg-muted: #2a2a2a;
+  --background-color: #1f1f1f;
+  --color-highlight: #d8b467;
   --color-callout: none;
-
-  --figure-caption-color: #999; /* subtle caption text */
+  --figure-caption-color: #999;
 }
 
-/* Toggle button */
-.theme-toggle {
-  position: fixed; /* fixed to viewport */
-  top: 2.2rem; /* distance from top */
-  right: 1rem; /* distance from right */
-  z-index: 1000; /* ensures it’s above other elements */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--background-color);
-  border: none;
-  cursor: pointer;
-  padding: 0.4rem;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.05); /* subtle hover effect */
-  background: rgba(0, 0, 0, 0.05);
-}
-
-.theme-toggle svg path {
-  fill: var(--font-body-color);
-  transition: opacity 0.4s ease;
-}
-
-/* Light mode (default) */
-.icon-sun {
-  opacity: 1;
-}
-.icon-moon {
-  opacity: 0;
-}
-
-/* Dark mode */
-html.dark .icon-sun {
-  opacity: 0;
-}
-html.dark .icon-moon {
-  opacity: 1;
-}
-
-#theme-icon-path {
-  transition: d 0.7s ease;
-}
-
-#sun-rays {
-  transition: opacity 1.5s ease;
-}
-
-html.dark #sun-rays,
-:root.dark #sun-rays {
-  opacity: 0;
-  transition: none; /* instantly hide rays when dark */
-}
-
-/* Override shadow in dark mode for visibility */
-html.dark .theme-toggle {
-  background: #2b2b2b; /* slightly lighter than main background */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* more visible */
-}
-
-/* Optional hover tweak for dark mode */
-html.dark .theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.05); /* subtle light overlay */
-}
-
-/* ======================================================
-   Fonts
-   ====================================================== */
-
+/* ===== Fonts ===== */
 @font-face {
   font-family: "Daniel";
   src: url("/assets/fonts/daniel-regular.woff2") format("woff2"),
@@ -169,36 +121,34 @@ html.dark .theme-toggle:hover {
   font-display: swap;
 }
 
-/* ======================================================
-   Base / Reset
-   ====================================================== */
-
+/* ===== Base / Reset ===== */
 html,
 body {
   height: 100%;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--font-body-color);
   font-family: var(--font-base-family);
   font-size: var(--font-base-size);
   line-height: 1.65;
-  color: var(--font-body-color);
-  margin: 0;
-  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background-color);
 }
 
-/* make images responsive and centered by default */
 img {
   display: block;
-  margin: var(--spacing-xs) auto;
   max-width: 100%;
   height: auto;
+  margin: var(--spacing-xs) auto;
 }
 
-/* Basic element spacing */
 p {
   margin-bottom: 1.2em;
 }
@@ -210,67 +160,54 @@ ol {
 }
 
 li {
-  margin-bottom: 0em;
+  margin-bottom: 0;
 }
 
-/* Remove top/bottom margin from nested lists */
 ul ul,
 ul ol,
 ol ul,
 ol ol {
-  margin-top: 0em; /* tweak as needed */
-  margin-bottom: 0em; /* tweak as needed */
-  padding-left: 0.25em; /* indent */
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0.25em;
 }
 
-/* Level 1 */
-ul {
-  list-style-type: disc;
-}
-
-/* Level 2 */
-ul ul {
-  list-style-type: disc;
-}
-
-/* Level 3 */
-ul ul ul {
-  list-style-type: disc;
-}
-
-/* Level 4 */
+ul,
+ul ul,
+ul ul ul,
 ul ul ul ul {
   list-style-type: disc;
 }
 
 .spaced-list li {
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
 }
-
-/* ======================================================
-   Typography / Headings / Links
-   ====================================================== */
-
+/* ===== Typography & Elements ===== */
 h1 {
   font-size: 2.25rem;
   line-height: 1.2;
 }
+
 h2 {
   font-size: 1.875rem;
   line-height: 1.25;
 }
+
 h3 {
   font-size: 1.5rem;
   line-height: 1.3;
 }
+
 h4 {
   font-size: 1.25rem;
   line-height: 1.35;
 }
+
 h5 {
   font-size: 1rem;
   line-height: 1.4;
 }
+
 h6 {
   font-size: 0.875rem;
   line-height: 1.5;
@@ -282,50 +219,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: inherit;
-  font-weight: var(--weight-medium);
-  color: var(--font-heading-color);
   margin-top: 1.5em;
   margin-bottom: 0.5em;
-}
-
-/* Page title used inside layout (optional wrapper handles spacing) */
-.page-title {
-  margin-top: var(--spacing-sm);
-  margin-bottom: 1.5rem;
-  text-align: left;
-}
-
-.now-content h2,
-.latest-now-content h2 {
-  font-size: 1.5rem;
+  color: var(--font-heading-color);
+  font-family: inherit;
   font-weight: var(--weight-medium);
 }
 
-.now-content h3,
-.latest-now-content h3 {
-  font-size: 1.2rem;
-  font-weight: var(--weight-medium);
-  position: relative;
-}
-
-/* Add ⨀ before every h3 */
-.now-content h3::before,
-.latest-now-content h3::before {
-  content: "⨀ ";
-  /*color: var(--color-highlight); /* optional: different color for the symbol */
-  margin-right: 0.1rem; /* spacing between symbol and text */
-}
-
-.now-content h2:not(:first-of-type)::before,
-.latest-now-content h2:not(:first-of-type)::before {
-  content: "";
-  display: block;
-  border-top: 1px solid var(--color-muted-2); /* style of the horizontal rule */
-  margin: 1.5rem 0; /* spacing above/below */
-}
-
-/* Links */
 a {
   color: var(--color-accent);
   text-decoration: none;
@@ -343,54 +243,42 @@ a:focus {
   outline-offset: 2px;
 }
 
-/* ======================================================
-   Blockquote / Quotes
-   ====================================================== */
-
 blockquote {
   margin: var(--spacing-md) 0;
   padding: 0.5em 1.5em;
   border-left: 4px solid var(--color-light-border);
+  background: transparent;
   color: var(--color-muted);
   font-style: italic;
   line-height: 1.5;
-  background: transparent; /* keep available if you want a subtle bg */
 }
 
-/* decorative large quotes (if wanted) */
-/* blockquote::before { content: "“"; font-size: 3rem; color: var(--color-accent); opacity: 0.12; position: absolute; } */
-
-/* ======================================================
-   Code / Preformatted / Tables
-   ====================================================== */
-
 code {
-  font-family: "Fira Mono", "Courier New", monospace;
-  background-color: var(--color-bg-muted);
   padding: 0.2em 0.4em;
   border-radius: 4px;
+  background-color: var(--color-bg-muted);
+  font-family: "Fira Mono", "Courier New", monospace;
   font-size: 0.95em;
 }
 
 pre {
-  background-color: var(--color-bg-muted);
-  padding: 1em;
   overflow-x: auto;
-  border-radius: 6px;
   margin: 1em 0;
+  padding: 1em;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-muted);
 }
 
-/* Tables */
 table {
-  border-collapse: collapse;
   width: 100%;
   margin-bottom: 1.5em;
+  border-collapse: collapse;
 }
 
 th,
 td {
-  border: 1px solid var(--color-table-border);
   padding: 0.5em 1em;
+  border: var(--border-width) solid var(--color-table-border);
   text-align: left;
 }
 
@@ -398,54 +286,230 @@ th {
   background-color: var(--color-bg-muted);
 }
 
-/* ======================================================
-   Layout & Components
-   ====================================================== */
+figure {
+  display: table;
+  margin: 0.5rem auto;
+  text-align: center;
+}
 
+figure .video-wrapper,
+figure iframe {
+  display: block;
+  max-width: 100%;
+}
+
+figcaption {
+  margin-top: 0.2rem;
+  color: var(--figure-caption-color);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+small {
+  color: var(--color-muted-2);
+  font-size: 0.875em;
+}
+
+::-moz-selection {
+  background: var(--color-highlight);
+}
+
+::selection {
+  background: var(--color-highlight);
+}
+
+/* ===== Layout ===== */
 .content {
+  box-sizing: border-box;
+  flex: 1 0 auto;
+  width: 100%;
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: var(--spacing-xs) var(--spacing-xlg);
+  padding: 0.5rem var(--spacing-xlg) var(--spacing-xs);
 }
 
-/* Header / Title / Nav */
+.page-title {
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
 .site-header {
-  text-align: center;
   margin: var(--spacing-xs) 0;
+  text-align: center;
 }
 
+/* ===== Header / Breadcrumb ===== */
 .site-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--site-title-height);
   margin: var(--spacing-lg) 0 0;
 }
 
-/* Site title uses the Daniel font */
-.site-title a {
-  font-family: var(--font-title-family);
-  font-size: 3.3rem;
-  font-weight: var(--weight-regular);
-  text-decoration: none;
+.site-title-home {
   color: inherit;
-  /* keep smoothing for display fonts */
+  font-family: var(--font-title-family);
+  font-size: var(--site-title-home-size);
+  font-weight: var(--weight-regular);
+  line-height: 1;
+  text-decoration: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Prevent hover/underline on the title link */
-.site-title a:hover,
-.site-title a:focus {
+.site-title-home:hover,
+.site-title-home:focus {
   color: inherit;
   text-decoration: none;
   outline: none;
 }
 
+.site-title-short {
+  display: none;
+}
+
+.site-title.is-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: var(--site-title-breadcrumb-gap);
+  min-height: var(--site-title-height);
+  height: auto;
+}
+
+.site-title.is-breadcrumb .site-title-home {
+  font-size: var(--site-title-breadcrumb-size);
+}
+
+.site-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--breadcrumb-gap);
+  row-gap: var(--breadcrumb-row-gap);
+  min-width: 0;
+  max-width: 100%;
+  font-size: var(--breadcrumb-font-size);
+  font-weight: var(--weight-regular);
+  line-height: var(--breadcrumb-line-height);
+}
+
+.site-breadcrumb a {
+  color: var(--font-body-color);
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: none;
+}
+
+.site-breadcrumb a:hover,
+.site-breadcrumb a:focus {
+  color: var(--color-accent);
+}
+
+.breadcrumb-separator {
+  color: var(--color-muted);
+}
+
+.breadcrumb-current {
+  color: var(--font-body-color);
+}
+
+.site-title.is-breadcrumb + .site-nav {
+  border-top-color: var(--color-light-border);
+}
+
+/* ===== Navigation ===== */
+.site-nav {
+  margin-top: var(--nav-margin-top);
+  padding: var(--nav-padding-y) 0;
+  border-top: var(--border-width) solid var(--color-light-border);
+  border-bottom: var(--border-width) solid var(--color-light-border);
+  text-align: center;
+}
+
+.site-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nav-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav ul::before {
+  font-size: var(--scroll-icon-size-desktop);
+}
+
+.site-nav li {
+  position: relative;
+}
+
+.site-nav li > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.site-nav a {
+  padding: 0.25rem 0;
+  color: var(--font-body-color);
+  font-size: var(--nav-link-size);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.site-nav li.active > a,
+.site-nav a:hover,
+.site-nav a:focus,
+.sub-nav li a:hover,
+.sub-nav li a:focus {
+  color: var(--color-accent);
+}
+
+.site-nav li.child-active > a .submenu-toggle {
+  color: var(--color-accent);
+}
+
+.site-nav .sub-nav {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  display: none;
+  width: max-content;
+  padding: 0.5rem 0;
+  transform: translateX(-50%);
+  border: var(--border-width) solid var(--color-light-border);
+  border-radius: var(--radius-sm);
+  background: var(--background-color);
+  list-style: none;
+  text-align: center;
+}
+
+.site-nav li:hover > .sub-nav {
+  display: block;
+}
+
+.sub-nav li {
+  padding: 0 0.75rem;
+}
+
+.sub-nav li a {
+  white-space: nowrap;
+}
+/* ===== Content Components ===== */
 .poem {
   font-family: monospace;
 }
 
 .poem-title {
-  font-family: monospace;
   margin-top: var(--spacing-sm);
   margin-bottom: 0.5rem;
+  font-family: monospace;
 }
 
 .poem-date {
@@ -453,28 +517,128 @@ th {
   font-size: 0.8em;
 }
 
-/* =============================
-   Music Page (Single Release)
-   ============================= */
+.now-content h2,
+.latest-now-content h2 {
+  font-size: 1.5rem;
+  font-weight: var(--weight-medium);
+}
+
+.now-content h3,
+.latest-now-content h3 {
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: var(--weight-medium);
+}
+
+.now-content h3::before,
+.latest-now-content h3::before {
+  content: "⨀ ";
+  margin-right: 0.1rem;
+}
+
+.now-content h2:not(:first-of-type)::before,
+.latest-now-content h2:not(:first-of-type)::before {
+  content: "";
+  display: block;
+  margin: 1.5rem 0;
+  border-top: var(--border-width) solid var(--color-muted-2);
+}
+
+.accordion-item {
+  padding: 0 1.5rem;
+}
+
+.accordion-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: none;
+  background: none;
+  color: var(--font-body-color);
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: var(--weight-bold);
+  text-align: left;
+}
+
+.accordion-icon {
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  margin-block: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.2s ease, opacity 0.2s ease;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 5000px;
+  opacity: 1;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.callout {
+  padding: 0.5em 1em;
+  border: 2px solid var(--font-body-color);
+  border-radius: var(--radius-md);
+  background-color: var(--color-callout);
+}
+
+/* ===== Music ===== */
 .release-title {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  font-size: 2.1rem;
+  gap: 0.75rem;
   margin-top: var(--spacing-sm);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
+  font-size: 2rem;
+}
+
+.release-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.9rem;
+}
+
+.release-header-row .release-badge {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.release-year {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1;
 }
 
 .release-badge {
   display: inline-block;
+  padding: 0.18rem 0.5rem;
+  border: var(--border-width) solid currentColor;
+  border-radius: 0.35rem;
+  background: rgba(0, 0, 0, 0.04);
   font-size: 0.4em;
   font-weight: var(--weight-medium);
   letter-spacing: 0.06em;
-  padding: 0.18rem 0.5rem;
-  border-radius: 0.35rem;
-  border: 1px solid currentColor;
-  background: rgba(0, 0, 0, 0.04);
   text-transform: uppercase;
+}
+
+.release-badge-desktop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.release-badge-mobile {
+  display: none;
 }
 
 .music-release-container h2 {
@@ -483,12 +647,13 @@ th {
   font-weight: var(--weight-medium);
 }
 
-/* Responsive video embeds */
 .video-embed {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 ratio */
   margin-bottom: 1rem;
+  padding-bottom: 56.25%;
+  border-radius: var(--video-radius);
+  overflow: hidden;
 }
 
 .video-embed iframe {
@@ -503,40 +668,31 @@ th {
   margin-bottom: 0;
 }
 
-/* Lyrics block */
 .lyrics {
-  white-space: pre-wrap;
-  line-height: 1.5;
   margin-top: 1rem;
   font-family: inherit;
+  line-height: 1.5;
+  white-space: pre-wrap;
 }
 
-/* =============================
-   Music Page (EP Release)
-   ============================= */
-
-/* Container: artwork + tracks side-by-side */
 .release-artwork-and-tracks {
   display: flex;
-  gap: 2rem;
   align-items: flex-start;
+  gap: var(--release-layout-gap);
 }
 
-/* Artwork wrapper */
 .release-artwork {
   flex-shrink: 0;
 }
 
-/* Artwork image */
 .release-artwork img {
-  width: 350px;
-  height: auto;
-  object-fit: cover;
   display: block;
-  border-radius: 10px;
+  width: var(--release-artwork-width);
+  height: auto;
+  border-radius: var(--radius-md);
+  object-fit: cover;
 }
 
-/* Tracks section */
 .release-tracks ol {
   margin: 0;
   padding-left: 1.5rem;
@@ -546,87 +702,93 @@ th {
   margin-bottom: 0.2rem;
 }
 
-/* =============================
-   Music Page (List View)
-   ============================= */
+.music-release-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--music-list-gap);
+}
 
-/* Layout for each release row */
 .music-list-item {
   display: flex;
   align-items: start;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem; /* controlled spacing between releases */
+  gap: var(--music-item-gap);
+  margin-bottom: 0;
+}
+
+.music-thumb {
+  display: block;
+  order: 1;
+  flex-shrink: 0;
+}
+.music-details {
+  order: 2;
 }
 
 .music-list p {
   margin: 0;
 }
 
-/* Artwork styling */
 .music-thumb img {
   width: 200px;
   height: 200px;
+  border-radius: var(--radius-sm);
   object-fit: cover;
-  border-radius: 6px;
 }
 
-/* Title + badge row */
 .music-title-row {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  margin: 2rem 0 0.75rem;
+  margin: 2rem 0 0.35rem;
 }
 
-/* Title */
+.music-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
 .music-title {
+  color: var(--color-muted);
   font-size: 1.25rem;
   font-weight: var(--weight-medium);
   text-decoration: underline;
-  color: var(--color-muted);
 }
 
-/* Mini badge (list page version) */
 .music-list .release-badge {
-  display: flex;
-  font-size: 0.55rem;
   padding: 0.1rem 0.3rem;
-  letter-spacing: 0.06em;
+  border: var(--border-width) solid currentColor;
   border-radius: 0.35rem;
-  border: 1px solid currentColor;
   background: rgba(0, 0, 0, 0.04);
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-/* Year under title row */
 .music-year {
-  font-size: 0.9rem;
   color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1;
 }
 
-/* =============================
-   Book Notes
-   ============================= */
-/* Container: book cover + metadata side-by-side */
+/* ===== Book Notes ===== */
 .book-cover-and-metadata {
   display: flex;
-  gap: 2rem;
   align-items: flex-start;
+  gap: 2rem;
   margin-top: var(--spacing-xs);
 }
 
-/* Artwork wrapper */
 .book-cover {
   flex-shrink: 0;
 }
 
-/* Artwork image */
 .book-cover img {
+  display: block;
   width: 200px;
   height: auto;
+  border-radius: var(--radius-sm);
   object-fit: cover;
-  display: block;
-  border-radius: 6px;
 }
 
 .book-title {
@@ -643,10 +805,7 @@ th {
   margin-bottom: 0.3rem;
 }
 
-/* =============================
-   Paintings
-   ============================= */
-
+/* ===== Paintings ===== */
 .painting-info {
   text-align: center;
 }
@@ -656,9 +815,9 @@ th {
 }
 
 .painting-title {
+  margin-top: 1em;
   font-size: 1.1rem;
   font-weight: var(--weight-bold);
-  margin-top: 1em;
 }
 
 .painting-metadata {
@@ -668,207 +827,101 @@ th {
 .painting-gallery:not(:first-of-type) a:has(img)::before {
   content: "";
   display: block;
-  border-top: 1px solid var(--color-muted-2);
   margin: 2.5rem 0;
+  border-top: var(--border-width) solid var(--color-muted-2);
 }
 
 .painting-gallery a {
   display: block;
 }
 
-/* ============================
-   Main Navigation (Unified)
-   ============================ */
-
-.site-nav {
-  text-align: center; /* keeps header title + nav visually centered */
-  margin-top: 0rem;
-}
-
-/* Flex container for main nav links */
-.site-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  justify-content: center; /* <-- THIS centers the nav */
-  align-items: center;
-  gap: 2.5rem;
-}
-
-/* Each top-level nav item */
-.site-nav li {
-  position: relative;
-}
-
-/* Top-level nav links */
-.site-nav a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: var(--font-body-color);
-  font-weight: var(--weight-medium);
-  font-size: 13px;
-  padding: 0.25rem 0;
-}
-
-.site-nav li.active > a,
-.site-nav a:hover,
-.site-nav a:focus,
-.sub-nav li a:hover,
-.sub-nav li a:focus {
-  color: var(--color-accent);
-}
-
-/* ============================
-   Dropdown / Sub-Navigation
-   ============================ */
-
-.site-nav .sub-nav {
-  display: none;
-  position: absolute;
-  left: 50%;
-  top: 100%;
-
-  transform: translateX(-50%); /* centers dropdown under parent */
-  background: var(--background-color);
-  padding: 0.5rem 0;
-  border: 1px solid var(--color-light-border);
-  border-radius: 6px;
-  list-style: none;
-  width: max-content;
-  text-align: center;
-}
-
-/* Show dropdown on hover */
-.site-nav li:hover > .sub-nav {
-  display: block;
-}
-
-/* Sub-nav items */
-.sub-nav li {
-  padding: 0rem 0.75rem;
-}
-
-.sub-nav li a {
-  white-space: nowrap;
-}
-
-.accordion-item {
-  /*margin-bottom: 1rem;*/
-  /*border-bottom: 1.5px solid var(--color-muted-2);*/
-  padding: 0 1.5rem;
-}
-
-.accordion-toggle {
-  width: 100%;
-  background: none;
-  border: none;
-  text-align: left;
-  font-size: 1em;
-  font-weight: var(--weight-bold);
-  color: var(--font-body-color);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.accordion-icon {
-  transition: transform 0.3s ease;
-  font-size: 1.8rem;
-}
-
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease, opacity 0.2s ease;
-  opacity: 0;
-  /*padding: 0 1rem 1rem; */
-  margin-block: 0 0;
-}
-
-.accordion-item.active .accordion-content {
-  max-height: 5000px; /* large enough to fit content */
-  opacity: 1;
-}
-
-.accordion-item.active .accordion-icon {
-  transform: rotate(45deg); /* + becomes x */
-}
-
-/* Footer */
+/* ===== Footer ===== */
 footer {
-  text-align: center;
-  /*margin-top: 3rem;*/
-  padding-bottom: 2rem;
+  flex-shrink: 0;
+  padding: 1rem 0 1.5rem;
+  border-top: var(--border-width) solid var(--color-light-border);
   color: var(--color-muted);
   font-size: 0.9rem;
+  text-align: center;
 }
 
 .footer-hr {
-  height: 2px;
-  background-color: var(--font-body-color);
+  height: var(--border-width);
   margin: 1.5rem 0;
+  background-color: var(--font-body-color);
 }
 
-/* ======================================================
-   Figures / Captions / Media
-   ====================================================== */
-
-figure {
-  display: table; /* shrinkwrap to content width */
-  margin: 0.5rem auto;
-  text-align: center;
+.category-footer {
+  margin-bottom: 1.5rem;
 }
 
-figure .video-wrapper,
-figure iframe {
-  max-width: 100%;
-  display: block;
+.footer-theme-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
 }
 
-/* caption */
-figcaption {
-  font-size: 0.9rem;
-  font-style: italic;
-  color: var(--figure-caption-color);
-  margin-top: 0.2rem;
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem;
+  border: var(--border-width) solid var(--color-light-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-muted);
 }
 
-.callout {
-  border: 2px solid var(--font-body-color);
-  border-radius: 10px;
-  background-color: var(--color-callout);
-  padding: 0.5em 1em;
+.theme-switch-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--font-body-color);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* ======================================================
-   Utilities
-   ====================================================== */
-
-/* small text */
-small {
-  font-size: 0.875em;
-  color: var(--color-muted-2);
+.theme-switch-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  line-height: 1;
+  transform: translateY(0.04em);
 }
 
-::-moz-selection {
-  background: var(--color-highlight);
+.theme-switch-option:hover,
+.theme-switch-option:focus-visible {
+  background: rgba(0, 0, 0, 0.08);
 }
 
-::selection {
-  background: var(--color-highlight);
+.theme-switch-option:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
 }
 
-/* ======================================================
-   MOBILE RESPONSIVENESS FOUNDATION
-   Safe baseline tweaks — desktop unaffected.
-   ====================================================== */
+.theme-switch-option.is-active {
+  background: var(--background-color);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.14);
+}
 
+html.dark .theme-switch-option:hover,
+html.dark .theme-switch-option:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+}
+/* ===== Responsive Overrides ===== */
 @media (max-width: 750px) {
   :root {
-    /* you can tweak scale if you want smaller base on mobile */
     --font-base-size: 18px;
   }
 
@@ -876,90 +929,220 @@ small {
     font-size: var(--font-base-size);
   }
 
-  .site-title a {
-    font-size: 2.4rem;
+  .site-title-home {
+    display: inline-block;
+    font-size: var(--site-title-mobile-size);
+    transform: translateY(var(--site-title-mobile-shift));
   }
 
-  /* ------------------------------
-     Fluid images that currently have fixed widths
-     ------------------------------ */
+  .site-title {
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: var(--site-title-height-mobile);
+    height: auto;
+    padding: var(--site-title-mobile-padding);
+  }
+
+  .site-title.is-breadcrumb {
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: var(--site-title-breadcrumb-gap-mobile);
+    width: 100%;
+    min-height: var(--site-title-height-mobile);
+    height: auto;
+    padding: var(--site-title-mobile-padding);
+  }
+
+  .site-title.is-breadcrumb .site-title-home {
+    flex: 0 0 auto;
+    align-self: flex-start;
+    font-size: var(--site-title-mobile-size);
+  }
+
+  .site-title.is-breadcrumb .site-title-full {
+    display: none;
+  }
+
+  .site-title.is-breadcrumb .site-title-short {
+    display: inline;
+  }
+
+  .site-breadcrumb {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-left: var(--breadcrumb-mobile-indent);
+    font-size: var(--breadcrumb-font-size-mobile);
+    line-height: var(--breadcrumb-line-height-mobile);
+    text-align: left;
+    text-indent: calc(-1 * var(--breadcrumb-mobile-indent));
+    transform: translateY(var(--site-title-mobile-shift));
+  }
+
+  .site-nav {
+    margin-top: var(--nav-margin-top-mobile);
+    padding: var(--nav-padding-y-mobile) 0;
+    border-top: var(--border-width) solid var(--color-light-border);
+    border-bottom: var(--border-width) solid var(--color-light-border);
+  }
+
+  .site-nav .nav-menu {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .site-nav .nav-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav ul {
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: var(--nav-gap-mobile);
+    width: max-content;
+    min-width: 100%;
+    margin: 0;
+    padding: 0 1.1rem;
+    text-align: left;
+  }
+
+  .site-nav ul::before {
+    content: "↔";
+    flex: 0 0 auto;
+    color: var(--color-muted);
+    font-size: var(--scroll-icon-size-mobile);
+    line-height: 1;
+  }
+
+  .site-nav li {
+    flex: 0 0 auto;
+  }
+
+  .site-nav li.nav-home {
+    display: none;
+  }
+
+  .site-nav a {
+    font-size: var(--nav-link-size-mobile);
+    white-space: nowrap;
+  }
+
+  .site-nav .sub-nav,
+  .submenu-toggle {
+    display: none;
+  }
+
+  .content {
+    padding: 0.6rem 1.1rem 1.2rem;
+  }
 
   .music-thumb img,
   .release-artwork img,
   .book-cover img {
     width: 100%;
+    max-width: var(--media-max-width-mobile);
     height: auto;
-    max-width: 280px;
     margin: 0 auto;
   }
 
-  /* ------------------------------
-     Layouts that need stacking on mobile
-     ------------------------------ */
-
-  /* Music EP page: artwork + tracklist */
   .release-artwork-and-tracks {
+    align-items: flex-start;
     flex-direction: column;
-    gap: 1.2rem;
-    align-items: center;
+    gap: var(--release-layout-gap-mobile);
   }
 
-  /* Music list items */
+  .release-artwork-and-tracks .release-artwork,
+  .release-artwork-and-tracks .release-tracks {
+    width: 100%;
+  }
+
+  .release-artwork-and-tracks .release-artwork img {
+    margin: 0;
+  }
+
   .music-list-item {
+    align-items: flex-start;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 1.5rem;
-  }
-
-  .music-title-row {
-    margin: 0.5rem 0 0.5rem;
-  }
-
-  /* Book notes */
-  .book-cover-and-metadata {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
+    gap: var(--music-item-gap-mobile);
+    margin: 0;
     text-align: left;
   }
 
-  /* ------------------------------
-     Better mobile content spacing
-     ------------------------------ */
-  .content {
-    padding: 1.2rem 1.1rem;
+  .music-release-list {
+    gap: var(--music-list-gap-mobile);
   }
 
-  /* ------------------------------
-     Typography adjustments for readability
-     ------------------------------ */
+  .music-list-item .music-details {
+    order: 1;
+    width: 100%;
+  }
+
+  .music-list-item .music-thumb {
+    display: block;
+    order: 2;
+    width: 100%;
+  }
+
+  .music-list-item .music-thumb img {
+    margin: 0;
+  }
+
+  .music-title-row {
+    justify-content: flex-start;
+    margin: 0 0 0.25rem;
+  }
+
+  .music-meta-row {
+    gap: 0.5rem;
+  }
+
+  .music-title {
+    font-size: 1.1rem;
+  }
+
+  .release-badge-desktop {
+    display: none;
+  }
+
+  .release-badge-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .book-cover-and-metadata {
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+  }
+
   h1 {
     font-size: 1.9rem;
   }
+
   h2 {
     font-size: 1.55rem;
   }
+
   h3 {
     font-size: 1.28rem;
   }
 
-  /* ------------------------------
-     Tables become scrollable
-     ------------------------------ */
   table {
     display: block;
     width: 100%;
     overflow-x: auto;
     white-space: nowrap;
   }
-}
 
-/* ======================================================
-   MOBILE UTILITIES — Safe to use anywhere
-   ====================================================== */
-
-@media (max-width: 750px) {
   .hide-mobile {
     display: none !important;
   }
@@ -968,151 +1151,5 @@ small {
 @media (min-width: 751px) {
   .hide-desktop {
     display: none !important;
-  }
-}
-
-.site-nav li > a {
-  display: inline-flex;
-  align-items: center; /* vertical centering */
-  gap: 0.3rem;
-}
-
-@media (max-width: 750px) {
-  .mobile-menu-toggle {
-    position: absolute;
-    top: 2.9rem;
-    left: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-    width: 28px;
-    height: 22px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1001;
-  }
-
-  .mobile-menu-toggle span {
-    width: 100%;
-    height: 2px;
-    background-color: var(--font-body-color);
-    border-radius: 2px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    display: block;
-    transform-origin: center;
-  }
-
-  /* Hamburger menu open state */
-  .mobile-menu-toggle.open span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .mobile-menu-toggle.open span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .mobile-menu-toggle.open span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  /* Keep theme toggle absolute on mobile */
-  .theme-toggle {
-    position: absolute;
-  }
-
-  .site-nav a {
-    font-size: 14px;
-  }
-
-  /* Hide desktop nav ul */
-  .site-nav ul {
-    flex-direction: column;
-    gap: 1rem;
-    display: none;
-    text-align: center;
-    margin-top: 1rem;
-  }
-
-  /* Show nav when open */
-  .site-nav ul.open {
-    display: flex;
-  }
-
-  /* Adjust sub-nav for mobile */
-  .site-nav .sub-nav {
-    position: static;
-    border: none;
-    transform: none;
-    display: none;
-    margin-top: 0.5rem;
-  }
-
-  .site-nav li.active > .sub-nav,
-  .site-nav li:hover > .sub-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .site-nav .has-children > a {
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-  }
-
-  .submenu-toggle {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-
-  .sub-nav {
-    display: none;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .sub-nav.open {
-    display: flex;
-  }
-
-  .sub-nav {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .sub-nav.open {
-    max-height: 500px; /* big enough to fit content */
-    opacity: 1;
-  }
-
-  .site-nav .has-children > a {
-    display: flex;
-    justify-content: center; /* keep text centered */
-    position: relative;
-    margin-right: 1.1em; /* increases space between arrow and next item */
-  }
-
-  .site-nav .has-children > a .submenu-toggle {
-    position: absolute;
-    margin-left: 6em;
-  }
-
-  /* Mobile submenu arrow */
-  .submenu-toggle {
-    display: inline-block;
-    transition: transform 0.3s ease;
-    margin-left: 0.5rem;
-  }
-
-  /* Rotate arrow when open */
-  .has-children.active > a .submenu-toggle {
-    transform: rotate(180deg);
   }
 }

@@ -9,10 +9,6 @@ eleventyNavigation:
 
 _(This is [a now page](https://nownownow.com/about). If you have your own site, [you should make one](https://nownownow.com/about) as well.)_
 
-{% include "snippets/link-now-archive.njk" %}
-
-<hr class="footer-hr">
-
 {% set latest = collections.now[0] %}
 
 Latest Update → **{{ latest.data.title }}**
@@ -25,4 +21,4 @@ Latest Update → **{{ latest.data.title }}**
 
 - {% include "snippets/link-now-archive.njk" %}
 - {% include "snippets/link-projects.njk" %}
-- {% include "snippets/link-deep-dive.njk" %}
+- {% include "snippets/link-about.njk" %}

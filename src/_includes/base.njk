@@ -3,9 +3,17 @@
 <head>
      <!-- Early theme application (prevents flash) -->
     <script>
-        if (localStorage.getItem("theme") === "dark") {
-            document.documentElement.classList.add("dark");
-        }
+        (() => {
+            const storedTheme = localStorage.getItem("theme") || "system";
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const useDarkTheme = storedTheme === "dark" || (storedTheme === "system" && prefersDark);
+
+            if (useDarkTheme) {
+                document.documentElement.classList.add("dark");
+            }
+
+            document.documentElement.dataset.themePreference = storedTheme;
+        })();
     </script>
 
     <meta charset="UTF-8">
@@ -18,27 +26,106 @@
     <link rel="apple-touch-icon" href="{{ '/assets/images/favicon.png' | url }}">
 </head>
 <body>
+    {% set isHomePage = page.url == '/' %}
+    {% set breadcrumbTrail = [] %}
+    {% set breadcrumbParentKey = '' %}
+
+    {% if not isHomePage %}
+        {% if eleventyNavigation and eleventyNavigation.key %}
+            {% set breadcrumbTrail = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: true, allowMissing: true }) %}
+        {% else %}
+            {% if tags %}
+                {% if "music" in tags %}
+                    {% set breadcrumbParentKey = "Music" %}
+                {% elif "essays" in tags %}
+                    {% set breadcrumbParentKey = "Essays" %}
+                {% elif "poem" in tags %}
+                    {% set breadcrumbParentKey = "Poetry" %}
+                {% elif "book-notes" in tags %}
+                    {% set breadcrumbParentKey = "Book Notes" %}
+                {% elif "paintings" in tags %}
+                    {% set breadcrumbParentKey = "Paintings" %}
+                {% elif "newsletter" in tags %}
+                    {% set breadcrumbParentKey = "Newsletter" %}
+                {% elif "now" in tags %}
+                    {% set breadcrumbParentKey = "Now" %}
+                {% endif %}
+            {% endif %}
+
+            {% if breadcrumbParentKey %}
+                {% set breadcrumbTrail = collections.all | eleventyNavigationBreadcrumb(breadcrumbParentKey, { includeSelf: true, allowMissing: true }) %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if not isHomePage and tags and ("music-song" in tags) and collections.eps %}
+        {% set parentEps = [] %}
+        {% for ep in collections.eps %}
+            {% if ep.data.tracks and ep.data.tracks.includes(title) %}
+                {% set parentEps = parentEps.concat([ep]) %}
+            {% endif %}
+        {% endfor %}
+
+        {% if parentEps.length %}
+            {% set parentEps = parentEps | sort(attribute="date") | reverse %}
+            {% set parentEp = parentEps[0] %}
+            {% set lastCrumb = null %}
+            {% if breadcrumbTrail and (breadcrumbTrail | length) > 0 %}
+                {% set lastCrumb = breadcrumbTrail[(breadcrumbTrail | length) - 1] %}
+            {% endif %}
+            {% if not lastCrumb or lastCrumb.url != parentEp.url %}
+                {% set breadcrumbTrail = breadcrumbTrail.concat([{ title: parentEp.data.title, url: parentEp.url }]) %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% set trailIncludesCurrentPage = false %}
+    {% if breadcrumbTrail and (breadcrumbTrail | length) > 0 %}
+        {% set breadcrumbLastIndex = (breadcrumbTrail | length) - 1 %}
+        {% set breadcrumbLast = breadcrumbTrail[breadcrumbLastIndex] %}
+        {% if breadcrumbLast and breadcrumbLast.url == page.url %}
+            {% set trailIncludesCurrentPage = true %}
+        {% endif %}
+    {% endif %}
+
     <header class="site-header">
         <div class="container">
-            <div class="site-title">
-                <a href="{{ '/' | url }}">{{ site.displayTitle }}</a>
+            <div class="site-title{% if not isHomePage %} is-breadcrumb{% endif %}">
+                <a class="site-title-home" href="{{ '/' | url }}">
+                    <span class="site-title-full">{{ site.displayTitle }}</span>
+                    <span class="site-title-short">S.</span>
+                </a>
+
+                {% if not isHomePage %}
+                    <nav class="site-breadcrumb" aria-label="Breadcrumb">
+                        {% for crumb in breadcrumbTrail %}
+                            <span class="breadcrumb-separator" aria-hidden="true">→</span>
+                            {% if crumb.url and crumb.url != page.url %}
+                                <a href="{{ crumb.url | url }}">{{ crumb.title }}</a>
+                            {% else %}
+                                <span class="breadcrumb-current">{{ crumb.title }}</span>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if not trailIncludesCurrentPage %}
+                            <span class="breadcrumb-separator" aria-hidden="true">→</span>
+                            <span class="breadcrumb-current">{{ title }}</span>
+                        {% endif %}
+                    </nav>
+                {% endif %}
             </div>
 
             <nav class="site-nav">
-                <!-- Mobile Menu Toggle -->
-                <button id="mobile-menu-toggle" class="mobile-menu-toggle hide-desktop" aria-label="Toggle menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
                 <!-- Main Navigation -->
                 <div class="nav-menu">
                     <ul>
                         {% for item in collections.all | eleventyNavigation %}
+                        {% if item.url != '/newsletter/' %}
                         <li class="
                             nav-item
+                            {% if item.url == '/' %}nav-home{% endif %}
                             {% if page.url == item.url %}active{% endif %} 
+                            {% if item.title == 'Writing' and (page.url == '/essays/' or page.url == '/poetry/' or (tags and ('essays' in tags or 'poem' in tags))) %}child-active{% endif %}
                             {% if item.children and item.children | length > 0 %}has-children{% endif %}
                         ">
                             <a href="{{ item.url | url }}">
@@ -58,33 +145,10 @@
                                 </ul>
                             {% endif %}
                         </li>
+                        {% endif %}
                         {% endfor %}
                     </ul>
                 </div>
-
-                <!-- Theme Toggle -->
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg id="theme-icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-                        <path id="theme-icon-path"
-                              fill="currentColor"
-                              d="M12 4a8 8 0 1 0 0 16 8 8 0 0 1 0-16z">
-                        </path>
-                        <g id="sun-rays"
-                           fill="none"
-                           stroke="currentColor"
-                           stroke-width="2"
-                           stroke-linecap="round">
-                            <line x1="12" y1="1" x2="12" y2="4"/>
-                            <line x1="12" y1="20" x2="12" y2="23"/>
-                            <line x1="4.2" y1="4.2" x2="6.3" y2="6.3"/>
-                            <line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/>
-                            <line x1="1" y1="12" x2="4" y2="12"/>
-                            <line x1="20" y1="12" x2="23" y2="12"/>
-                            <line x1="4.2" y1="19.8" x2="6.3" y2="17.7"/>
-                            <line x1="17.7" y1="6.3" x2="19.8" y2="4.2"/>
-                        </g>
-                    </svg>
-                </button>
             </nav>
         </div>
     </header>
@@ -101,28 +165,77 @@
             <a href="{{ '/about/' | url }}">Sasha Smith</a> · 
             <a href="{{ '/contact/' | url }}">Say Hi</a> 👋
         </p>
+        <div class="footer-theme-row">
+            <div class="theme-switch" role="group" aria-label="Theme preference">
+                <button type="button" class="theme-switch-option" data-theme-option="system" aria-label="Use device theme" aria-pressed="false"><span class="theme-switch-icon">🖥️</span></button>
+                <button type="button" class="theme-switch-option" data-theme-option="light" aria-label="Use light theme" aria-pressed="false"><span class="theme-switch-icon">☀️</span></button>
+                <button type="button" class="theme-switch-option" data-theme-option="dark" aria-label="Use dark theme" aria-pressed="false"><span class="theme-switch-icon">🌙</span></button>
+            </div>
+        </div>
     </footer>
 
     <!-- JS -->
     <script>
-        /* ---------- Theme Toggle ---------- */
-        const themeToggle = document.getElementById("theme-toggle");
-        const themeIconPath = document.getElementById("theme-icon-path");
+        /* ---------- Theme Preference ---------- */
+        const THEME_STORAGE_KEY = "theme";
+        const THEME_FALLBACK = "system";
+        const themeButtons = document.querySelectorAll("[data-theme-option]");
+        const themeMedia = window.matchMedia("(prefers-color-scheme: dark)");
 
-        const ICONS = {
-            sun:  "M12 4a8 8 0 1 0 0 16 8 8 0 0 1 0-16z",
-            moon: "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+        function getThemePreference() {
+            const stored = localStorage.getItem(THEME_STORAGE_KEY);
+            if (stored === "light" || stored === "dark" || stored === "system") {
+                return stored;
+            }
+            return THEME_FALLBACK;
+        }
+
+        function getEffectiveTheme(preference) {
+            if (preference === "dark") {
+                return "dark";
+            }
+            if (preference === "light") {
+                return "light";
+            }
+            return themeMedia.matches ? "dark" : "light";
+        }
+
+        function applyTheme(preference) {
+            const effectiveTheme = getEffectiveTheme(preference);
+            document.documentElement.classList.toggle("dark", effectiveTheme === "dark");
+            document.documentElement.dataset.themePreference = preference;
+
+            themeButtons.forEach((button) => {
+                const isActive = button.dataset.themeOption === preference;
+                button.classList.toggle("is-active", isActive);
+                button.setAttribute("aria-pressed", isActive ? "true" : "false");
+            });
+        }
+
+        function setThemePreference(preference) {
+            localStorage.setItem(THEME_STORAGE_KEY, preference);
+            applyTheme(preference);
+        }
+
+        applyTheme(getThemePreference());
+
+        themeButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                setThemePreference(button.dataset.themeOption);
+            });
+        });
+
+        const handleThemeMediaChange = () => {
+            if (getThemePreference() === "system") {
+                applyTheme("system");
+            }
         };
 
-        // Set initial icon
-        const isDark = document.documentElement.classList.contains("dark");
-        themeIconPath.setAttribute("d", isDark ? ICONS.moon : ICONS.sun);
-
-        themeToggle.addEventListener("click", () => {
-            const nowDark = document.documentElement.classList.toggle("dark");
-            localStorage.setItem("theme", nowDark ? "dark" : "light");
-            themeIconPath.setAttribute("d", nowDark ? ICONS.moon : ICONS.sun);
-        });
+        if (themeMedia.addEventListener) {
+            themeMedia.addEventListener("change", handleThemeMediaChange);
+        } else {
+            themeMedia.addListener(handleThemeMediaChange);
+        }
 
          /* ---------- Accordion ---------- */
         document.querySelectorAll(".accordion-toggle").forEach(button => {
@@ -132,31 +245,6 @@
 
                 item.classList.toggle("active");
                 button.setAttribute("aria-expanded", !expanded);
-            });
-        });
-
-        /* ---------- Mobile Menu ---------- */
-        const mobileToggle = document.querySelector(".mobile-menu-toggle");
-        const navMenu = document.querySelector(".site-nav ul");
-
-        // Hamburger opens/closes the whole menu
-        mobileToggle.addEventListener("click", () => {
-            const expanded = mobileToggle.classList.toggle("open");
-            navMenu.classList.toggle("open");
-            mobileToggle.setAttribute("aria-expanded", expanded);
-        });
-
-        // Submenu toggles for mobile
-        document.querySelectorAll(".submenu-toggle").forEach(toggle => {
-            toggle.addEventListener("click", (e) => {
-                e.preventDefault(); // prevent arrow click from following link
-
-                const parentLi = toggle.closest("li.has-children");
-                const subNav = parentLi.querySelector(".sub-nav");
-
-                // Toggle classes
-                subNav.classList.toggle("open");       // show/hide submenu
-                parentLi.classList.toggle("active");   // rotate arrow
             });
         });
 

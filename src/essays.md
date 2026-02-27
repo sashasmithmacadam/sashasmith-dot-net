@@ -8,8 +8,6 @@ eleventyNavigation:
   order: 1
 ---
 
-My {{ collections.essays | length }} essays, sorted from newest to oldest:
-
 <ul class="spaced-list">
 {% for essay in collections.essays %}
   <li><a href="{{ essay.url }}">{{ essay.data.title }}</a></li>
@@ -18,6 +16,6 @@ My {{ collections.essays | length }} essays, sorted from newest to oldest:
 
 <hr class="footer-hr">
 
-- {% include "snippets/link-newsletter.njk" %}
-- Read my poetry → **[Poetry]({{ '/poetry/' | url }})**
+- {% include "snippets/link-email-list.njk" %}
+- {% include "snippets/link-poetry.njk" %}
 - {% include "snippets/link-projects.njk" %}

@@ -49,7 +49,7 @@ layout: base.njk
   {% set previous = paintingCollection[currentIndex + 1] %}
 {% endif %}
 
-<nav class="paintings-footer">
+<nav class="category-footer">
     {% if next %}
         <div><em>Next: <a href="{{ next.url | url }}">{{ next.data.title }}</a></em></div>
     {% endif %}

@@ -9,27 +9,59 @@ eleventyNavigation:
 
 Hey, it’s [Sash]({{ '/about/' | url }}).
 
-I’m a [singer-songwriter]({{ '/music/' | url }}) who also:
+I make [music]({{ '/music/' | url }}), [write]({{ '/writing/' | url }}) a lot, and [paint]({{ '/paintings/' | url }}) a little.
 
-- [Writes]({{ '/writing/' | url }}) a lot
-- [Paints]({{ '/paintings/' | url }}) a little
+[Success]({{ '/success/' | url }}), to me, is simply to keep creating for as long as I'm here.
 
-I believe in creating & connecting.
+I recently released an EP — *[Running Down Dark Alleys Blind]({{ '/rddab/' | url }})*.
 
-My best work happens at the intersection between intuition and thinking.
+<p style="text-align: center;">
+  <a href="{{ '/rddab/' | url }}" style="display: inline-block; line-height: 0;">
+    <img
+      src="{{ '/assets/images/music-artwork/running-down-dark-alleys-blind.jpg' | url }}"
+      alt="Running Down Dark Alleys Blind artwork"
+      style="display: block; width: 250px; max-width: 100%; height: auto; border-radius: 12px;"
+    >
+  </a>
+</p>
 
-[Success]({{ '/success/' | url }}), to me, is to keep playing the game of creation [until the day I die]({{ '/success/#die' | url }}).
+{% set featuredRelease = null %}
+{% for ep in collections.eps %}
+  {% if ep.url == '/rddab/' %}
+    {% set featuredRelease = ep %}
+  {% endif %}
+{% endfor %}
 
-For years, I got trapped in the attention conglomerates of social media. Now I’m a digital minimalist, standing firmly [against the brandification of artists]({{ '/brandification/' | url }}).
+{% set featuredListenLinks = [] %}
+{% if featuredRelease %}
+  {% if featuredRelease.data.spotify %}
+    {% set featuredListenLinks = featuredListenLinks.concat([{ name: "Spotify", url: featuredRelease.data.spotify }]) %}
+  {% endif %}
+  {% if featuredRelease.data.appleMusic %}
+    {% set featuredListenLinks = featuredListenLinks.concat([{ name: "Apple Music", url: featuredRelease.data.appleMusic }]) %}
+  {% endif %}
+  {% if featuredRelease.data.bandcamp %}
+    {% set featuredListenLinks = featuredListenLinks.concat([{ name: "Bandcamp", url: featuredRelease.data.bandcamp }]) %}
+  {% endif %}
+  {% if featuredRelease.data.youtube %}
+    {% set featuredListenLinks = featuredListenLinks.concat([{ name: "YouTube", url: featuredRelease.data.youtube }]) %}
+  {% endif %}
+{% endif %}
 
-Do come in, [have a look around]({{ '/projects/' | url }}), and if you like what you see, consider [subscribing to my email list]({{ '/newsletter/' | url }}). I send occasional updates about projects and releases.
+{% if featuredListenLinks.length %}
+Listen here → {% for item in featuredListenLinks %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.name }}</a>{% if not loop.last %}, {% else %}.{% endif %}{% endfor %}
+{% else %}
+Listen here → coming soon.
+{% endif %}
 
-Lastly:
+Or have a look around:
 
 - {% include "snippets/link-projects.njk" %}
 - {% include "snippets/link-now.njk" %}
-- {% include "snippets/link-deep-dive.njk" %}
+- {% include "snippets/link-about.njk" %}
 
-Please [reach out]({{ '/contact/' | url }}) anytime. I reply to every email and stay in touch with people all over the world.
+I also send occasional [email updates]({{ '/email-list/' | url }}) about new work. I’m not much of a social media person, so email is the best way to stay in the loop.
 
-That’s all, thanks for dropping by!
+And if you ever feel like [reaching out]({{ '/contact/' | url }}), even just to say hi, please do!
+
+That’s all, thanks for dropping by.

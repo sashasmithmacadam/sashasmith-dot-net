@@ -7,27 +7,10 @@ eleventyNavigation:
   order: 8
 ---
 
-Send me an email → sasha@sashasmith.net
+You can reach me at → [sasha@sashasmith.net](mailto:sasha@sashasmith.net)
 
-Please do reach out — I always reply and genuinely love meeting new people.
+I reply to every email and love hearing from people.
 
-_(I will now proceed to geek out in a most proper old brit gent manner — which is the main reason I wanted to create a contact page instead of just having a mailto link.)_
+Whether it’s about [music]({{ '/music/' | url }}), [writing]({{ '/writing/' | url }}), [paintings]({{ '/paintings/' | url }}), a collaboration, or just to say hello — feel free to write.
 
-🧐 Why, my most distinguished Sir or Lady, might you wish to contact me?
-
-Well, perhaps to:
-
-- Drop me a line simply to say hello
-- Share your admiration for [insert favourite topic]
-- Inquire about booking me to perform or speak at your event
-- Air your grievances about [insert not-so-favourite topic] (I shall listen politely, of course)
-- Propose a daring adventure (treasure map 🗺 → bonus points)
-- Purchase one of my paintings for your exquisite private collection
-- Regale me with tales of [insert fascinating thing] you've done
-- Or simply to say hello again, for good measure!
-
-I look forward to your correspondence — let's have a proper chat!
-
-_(Geek-athon concluded.)_
-
-Seriously, email me and let's chat → sasha@sashasmith.net
+I genuinely look forward to it.

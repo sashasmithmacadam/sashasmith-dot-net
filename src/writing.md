@@ -11,13 +11,12 @@ I write mostly to understand what’s going on inside my head. Occasionally it w
 
 Other times I write to try and make sense of what’s going on in the world. That part fails every time.
 
-- Read my essays → **[Essays]({{ '/essays/' | url }})**
-- Read my poems → **[Poetry]({{ '/poetry/' | url }})**
-- Read my book notes → **[Book Notes]({{ '/book-notes/' | url }})**
+- {% include "snippets/link-essays.njk" %}
+- {% include "snippets/link-poetry.njk" %}
 
-I also send a [newsletter]({{ '/newsletter/' | url }}) you can subscribe to for free if you like my writing.
+If you like my writing, you can [join my email list]({{ '/email-list/' | url }}) for occasional updates.
 
 <hr class="footer-hr">
 
-- {% include "snippets/link-newsletter.njk" %}
 - {% include "snippets/link-projects.njk" %}
+- {% include "snippets/link-about.njk" %}

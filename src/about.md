@@ -114,9 +114,8 @@ I've always written privately, but I've resisted sharing it. Part of me clung to
 
 But I'm working to align my actions with my values — to live the life I *want*, not the one I'm supposed to fit into. That's why I've started sharing my writing:
 
-- **Thoughts and musings** → [Essays]({{ '/essays/' | url }})
-- **Notes on what I read** → [Book Notes]({{ '/book-notes/' | url }})
-- **Poems** → [Poetry]({{ '/poetry/' | url }}) (mostly in Spanish for now)
+- {% include "snippets/link-essays.njk" %}
+- {% include "snippets/link-poetry.njk" %}
 
 And something bigger is on the way too...
 
@@ -259,7 +258,7 @@ They always had books going, each with their own favourite genres. Seeing that a
 My reading habits and taste continually evolve, but here are some favourites:
 
 - **A couple of novels:**
-  - _[Zorba the Greek](https://sashasmith.net/booknotes/zorba/)_
+  - _[Zorba the Greek]({{ '/zorba/' | url }})_
   - _[A Confederacy of Dunces](https://www.goodreads.com/book/show/310612.A_Confederacy_of_Dunces)_
 - **A couple of authors:**
   - [Charles Bukowski](https://www.goodreads.com/author/show/13275.Charles_Bukowski) (especially his [poetry](https://www.goodreads.com/book/show/70884.The_Last_Night_of_the_Earth_Poems))
@@ -271,9 +270,9 @@ My reading habits and taste continually evolve, but here are some favourites:
   - [Cal Newport](https://calnewport.com/writing/)
   - [Austin Kleon](https://austinkleon.com/books/)
 
-How I read changes — sometimes I'm all about my Kindle, other times I want nothing but hardcovers. But the format doesn't matter. What matters is wrestling with the ideas, [having conversations with the authors in my notebooks]({{ '/book-notes/' | url }}), and translating those learnings into my life.
+How I read changes — sometimes I'm all about my Kindle, other times I want nothing but hardcovers. 
 
-View my notes → **[Book Notes]({{ '/book-notes/' | url }})**
+But the format doesn't matter. What matters is wrestling with the ideas, having conversations with the authors in my notebooks, and translating those learnings into my life.
 
 {% endaccordionItem %}
 
@@ -362,7 +361,7 @@ From now on:
 - **I'm carving out my own space online:**
   - Building [my own website]({{ '//' | url }})
   - Sharing my thoughts in my [essays]({{ '/essays/' | url }})
-  - Sending a [weekly newsletter]({{ '/newsletter/' | url }})
+  - Sending occasional updates via my [email list]({{ '/email-list/' | url }})
 - **I'm shifting focus:**
   - Off social media
   - [Connecting]({{ '/contact/' | url }}) with interesting people every week
@@ -373,7 +372,7 @@ From now on:
 
 This shift has been building inside me for years — a radical realignment to do the work I want to do, leaving behind the distractions of the unimportant.
 
-I'm excited about what's ahead. I hope you'll [join me]({{ '/newsletter/' | url }}) on this journey.
+I'm excited about what's ahead. I hope you'll [join me]({{ '/email-list/' | url }}) on this journey.
 
 You're always welcome.
 

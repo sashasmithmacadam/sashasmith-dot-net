@@ -2,33 +2,76 @@
 layout: "music-base.njk"
 ---
 
-  {# Title + badge (releaseType shown as a boxed badge) #}
+  {# Find EPs that contain this song's title #}
+  {% set parentReleases = [] %}
+
+  {% for ep in collections.eps %}
+    {% if ep.data.tracks and ep.data.tracks.includes(title) %}
+      {% set parentReleases = parentReleases.concat([ep]) %}
+    {% endif %}
+  {% endfor %}
+
+  {# Sort by date (latest first) #}
+  {% set parentReleases = parentReleases | sort(attribute="date") | reverse %}
+
+  {# Use nearest parent EP as fallback for listen links #}
+  {% set primaryParent = null %}
+  {% if parentReleases.length %}
+    {% set primaryParent = parentReleases[0] %}
+  {% endif %}
+
+  {% set spotifyLink = spotify %}
+  {% if not spotifyLink and primaryParent and primaryParent.data.spotify %}
+    {% set spotifyLink = primaryParent.data.spotify %}
+  {% endif %}
+
+  {% set appleMusicLink = appleMusic %}
+  {% if not appleMusicLink and primaryParent and primaryParent.data.appleMusic %}
+    {% set appleMusicLink = primaryParent.data.appleMusic %}
+  {% endif %}
+
+  {% set bandcampLink = bandcamp %}
+  {% if not bandcampLink and primaryParent and primaryParent.data.bandcamp %}
+    {% set bandcampLink = primaryParent.data.bandcamp %}
+  {% endif %}
+
+  {% set youtubeLink = youtube %}
+  {% if not youtubeLink and primaryParent and primaryParent.data.youtube %}
+    {% set youtubeLink = primaryParent.data.youtube %}
+  {% endif %}
+
+  {# Title + release meta row #}
   <h1 class="release-title">
     {{ title }}
     {% if releaseType %}
-      <span class="release-badge" aria-hidden="true">{{ releaseType }}</span>
+      <span class="release-badge release-badge-desktop" aria-hidden="true">{{ releaseType }}</span>
     {% endif %}
   </h1>
-
-    {# Release Year (you can move this elsewhere) #}
-  {% if date %}
-    <p class="release-meta">{{ date.getFullYear() }}</p>
+  {% if releaseType or date %}
+    <p class="release-header-row">
+      {% if releaseType %}
+        <span class="release-badge release-badge-mobile" aria-hidden="true">{{ releaseType }}</span>
+      {% endif %}
+      {% if date %}
+        <span class="release-year">{{ date.getFullYear() }}</span>
+      {% endif %}
+    </p>
   {% endif %}
 
   {# Listen Links (single-line, comma-separated) #}
   {% set listenLinks = [] %}
 
-  {% if spotify %}
-    {% set listenLinks = listenLinks.concat([{ name: "Spotify", url: spotify }]) %}
+  {% if spotifyLink %}
+    {% set listenLinks = listenLinks.concat([{ name: "Spotify", url: spotifyLink }]) %}
   {% endif %}
-  {% if appleMusic %}
-    {% set listenLinks = listenLinks.concat([{ name: "Apple Music", url: appleMusic }]) %}
+  {% if appleMusicLink %}
+    {% set listenLinks = listenLinks.concat([{ name: "Apple Music", url: appleMusicLink }]) %}
   {% endif %}
-  {% if bandcamp %}
-    {% set listenLinks = listenLinks.concat([{ name: "Bandcamp", url: bandcamp }]) %}
+  {% if bandcampLink %}
+    {% set listenLinks = listenLinks.concat([{ name: "Bandcamp", url: bandcampLink }]) %}
   {% endif %}
-  {% if youtube %}
-    {% set listenLinks = listenLinks.concat([{ name: "YouTube", url: youtube }]) %}
+  {% if youtubeLink %}
+    {% set listenLinks = listenLinks.concat([{ name: "YouTube", url: youtubeLink }]) %}
   {% endif %}
 
   {% if listenLinks.length %}
@@ -39,19 +82,6 @@ layout: "music-base.njk"
       {% endfor %}
     </p>
   {% endif %}
-
-
-  {# Find EPs that contain this single's title #}
-  {% set parentReleases = [] %}
-
-  {% for ep in collections.eps %}
-    {% if ep.data.tracks and ep.data.tracks.includes(title) %}
-      {% set parentReleases = parentReleases.concat([ep]) %}
-    {% endif %}
-  {% endfor %}
-
-  {# Sort by date (earliest → latest). Remove "reverse" to invert #}
-  {% set parentReleases = parentReleases | sort(attribute="date") | reverse %}
 
   {% if parentReleases.length %}
     <p class="release-meta">

@@ -21,17 +21,19 @@ layout: "base.njk"
 {% set previous = null %}
 {% set next = null %}
 
-{% if currentIndex > 0 %}
-  {% set previous = musicCollection[currentIndex - 1] %}
-{% endif %}
+{% if currentIndex >= 0 %}
+  {% if currentIndex > 0 %}
+    {% set previous = musicCollection[currentIndex - 1] %}
+  {% endif %}
 
-{% if currentIndex < (musicCollection | length) - 1 %}
-  {% set next = musicCollection[currentIndex + 1] %}
+  {% if currentIndex < (musicCollection | length) - 1 %}
+    {% set next = musicCollection[currentIndex + 1] %}
+  {% endif %}
 {% endif %}
 
 <hr class="footer-hr">
 
-<nav class="music-footer">
+<nav class="category-footer">
     {% if next %}
         <div><em>Next: <a href="{{ next.url | url }}">{{ next.data.title }}</a></em></div>
     {% endif %}
