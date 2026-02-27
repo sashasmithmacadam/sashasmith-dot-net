@@ -2,11 +2,12 @@
 title: "In the End It Comes"
 permalink: "/iteic/"
 date: 2026-02-27
-spotify: ""
-appleMusic: ""
-youtube: ""
-bandcamp: ""
-videoLinks: []
+spotify: "https://open.spotify.com/track/46cvCruuEZrmWdqDM1UzMC?si=c2ab52b041044ef8"
+appleMusic: "https://music.apple.com/us/song/in-the-end-it-comes/1871776917"
+youtube: "https://youtu.be/Oy9Qz_l5lc0"
+bandcamp: "https://sashasmith.bandcamp.com/track/in-the-end-it-comes"
+videoLinks:
+  - "https://youtu.be/Oy9Qz_l5lc0"
 lyrics: |
   You fight to live
   But in the end it comes

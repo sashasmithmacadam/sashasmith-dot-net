@@ -2,11 +2,12 @@
 title: "I Don't Belong in Your Arms"
 permalink: "/idbiya/"
 date: 2026-02-27
-spotify: ""
-appleMusic: ""
-youtube: ""
-bandcamp: ""
-videoLinks: []
+spotify: "https://open.spotify.com/track/68mLeYjkgU8t4CG3l1h1DX?si=81affe2b1fd74b88"
+appleMusic: "https://music.apple.com/us/song/i-dont-belong-in-your-arms/1871776916"
+youtube: "https://youtu.be/wwZfbte7m0g"
+bandcamp: "https://sashasmith.bandcamp.com/track/i-dont-belong-in-your-arms"
+videoLinks:
+  - "https://youtu.be/wwZfbte7m0g"
 lyrics: |
   Been around the block
   And seen it through your eyes
