@@ -37,7 +37,7 @@
   --radius-md: 12px;
   --radius-pill: 999px;
 
-  --site-title-height: 4rem;
+  --site-title-height: 3.5rem;
   --site-title-height-mobile: 2.5rem;
   --site-title-home-size: 3rem;
   --site-title-breadcrumb-size: 2.25rem;
@@ -598,7 +598,7 @@ small {
   gap: 0.75rem;
   margin-top: var(--spacing-sm);
   margin-bottom: 0.2rem;
-  font-size: 1.75rem;
+  font-size: 2rem;
 }
 
 .release-header-row {
