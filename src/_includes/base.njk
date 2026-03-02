@@ -29,9 +29,15 @@
     {% set isHomePage = page.url == '/' %}
     {% set breadcrumbTrail = [] %}
     {% set breadcrumbParentKey = '' %}
+    {% set breadcrumbCurrentTitle = title %}
 
     {% if not isHomePage %}
-        {% if eleventyNavigation and eleventyNavigation.key %}
+        {% if breadcrumbParent %}
+            {% set breadcrumbTrail = collections.all | eleventyNavigationBreadcrumb(breadcrumbParent, { includeSelf: true, allowMissing: true }) %}
+            {% if breadcrumbTitle %}
+                {% set breadcrumbCurrentTitle = breadcrumbTitle %}
+            {% endif %}
+        {% elif eleventyNavigation and eleventyNavigation.key %}
             {% set breadcrumbTrail = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: true, allowMissing: true }) %}
         {% else %}
             {% if tags %}
@@ -109,7 +115,7 @@
 
                         {% if not trailIncludesCurrentPage %}
                             <span class="breadcrumb-separator" aria-hidden="true">→</span>
-                            <span class="breadcrumb-current">{{ title }}</span>
+                            <span class="breadcrumb-current">{{ breadcrumbCurrentTitle }}</span>
                         {% endif %}
                     </nav>
                 {% endif %}

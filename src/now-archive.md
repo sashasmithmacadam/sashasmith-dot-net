@@ -3,9 +3,9 @@ layout: "base.njk"
 title: "Now Archive"
 permalink: "/then/"
 hidePageTitle: false
+breadcrumbParent: "Now"
+breadcrumbTitle: "Archive"
 ---
-
-All my now updates:
 
 <ul class="spaced-list">
 {% for now in collections.now %}
