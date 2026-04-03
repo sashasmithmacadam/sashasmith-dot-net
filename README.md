@@ -20,7 +20,7 @@ npm install
 
 2. Start local dev server:
 ```bash
-npm start
+npm run dev
 ```
 
 3. Open:
@@ -30,7 +30,7 @@ http://localhost:8080
 
 ## Scripts
 
-- `npm start`  
+- `npm run dev`  
   Runs Eleventy in serve/watch mode:
   `npx @11ty/eleventy --serve`
 
@@ -116,7 +116,7 @@ If Netlify is already connected, pushes to the configured branch should trigger 
 
 ## Common Troubleshooting
 
-- Port already in use on `npm start`:
+- Port already in use on `npm run dev`:
   Stop other dev servers and rerun.
 - Missing module errors:
   Run `npm install`.

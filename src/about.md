@@ -297,7 +297,7 @@ Ok, that got a little weird.
 
 I've been with my girlfriend Marta {% yearsSince2015 %} years. We met at one of my concerts — it was her birthday, there's even [video](https://youtu.be/_Ne4KKWkmUI?si=zZOizKaFYXKzcWzx&t=2460) of the moment, we look so young ❤
 
-Two mysterious creatures live with us. We're pretty sure they control us, not the other way around. Meet them:
+Three mysterious creatures live with us. We're pretty sure they control us, not the other way around. Meet them:
 
 <figure>
     <img src="/assets/images/midnight.jpg" alt="Black cat" width="1000">
@@ -307,6 +307,11 @@ Two mysterious creatures live with us. We're pretty sure they control us, not th
 <figure>
     <img src="/assets/images/snowy.jpg" alt="Grey cat" width="1000">
     <figcaption><strong>Snowy</strong> (b. circa Apr 2023)</figcaption>
+</figure>
+
+<figure>
+    <img src="/assets/images/ronnie.jpg" alt="Orange and white cat" width="1000">
+    <figcaption><strong>Ronnie</strong> (b. circa Jun 2025)</figcaption>
 </figure>
 
 I have a much older brother and sister. They love when I emphasize *much older*.
