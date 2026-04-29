@@ -100,4 +100,4 @@ Let me know if you have productivity or organization systems that work for youâ€
 
 **Sash**
 
-P.S. Filming an acoustic video of _She Can Be_ with Marta soon. Stay tuned on the [YouTube channel](https://www.youtube.com/@SashaSmithXYZ).
+P.S. Filming an acoustic video of _She Can Be_ with Marta soon. Stay tuned on the [YouTube channel](https://www.youtube.com/@thesashasmith).

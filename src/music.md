@@ -12,7 +12,7 @@ eleventyNavigation:
   You can listen to all my releases on:
   <a href="https://open.spotify.com/artist/6zskAcFVQdOflTkSPOqk0H?si=ATz1GGY9TjGAvqeRVcRGmA">Spotify</a>,
   <a href="https://music.apple.com/us/artist/sasha-smith/1348002347">Apple Music</a>,
-  <a href="https://www.youtube.com/sashasmithxyz">YouTube</a>, and
+  <a href="https://www.youtube.com/@thesashasmith">YouTube</a>, and
   <a href="https://sashasmith.bandcamp.com/">Bandcamp</a>.
 </p>
 
