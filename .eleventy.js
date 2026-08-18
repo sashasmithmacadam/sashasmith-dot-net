@@ -43,6 +43,54 @@ module.exports = function (eleventyConfig) {
     });
   });
 
+  eleventyConfig.addFilter("nowAge", (value) => {
+    if (!value) {
+      return "";
+    }
+
+    const published = new Date(value);
+    if (Number.isNaN(published.getTime())) {
+      return "";
+    }
+
+    const start = new Date(
+      published.getUTCFullYear(),
+      published.getUTCMonth(),
+      published.getUTCDate()
+    );
+    const todayRaw = new Date();
+    const today = new Date(
+      todayRaw.getFullYear(),
+      todayRaw.getMonth(),
+      todayRaw.getDate()
+    );
+
+    if (today <= start) {
+      return "today";
+    }
+
+    let years = today.getFullYear() - start.getFullYear();
+    let months = today.getMonth() - start.getMonth();
+    let days = today.getDate() - start.getDate();
+
+    if (days < 0) {
+      months -= 1;
+      days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    }
+
+    if (months < 0) {
+      years -= 1;
+      months += 12;
+    }
+
+    const parts = [];
+    if (years) parts.push(`${years}y`);
+    if (months) parts.push(`${months}m`);
+    if (days) parts.push(`${days}d`);
+
+    return parts.join(" ");
+  });
+
   /* ---------------------------
    * Plugins
    * --------------------------- */

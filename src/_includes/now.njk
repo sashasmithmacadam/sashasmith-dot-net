@@ -11,6 +11,11 @@ layout: "base.njk"
 
 {% set previous = collections.now[currentIndex + 1] %}
 {% set next = collections.now[currentIndex - 1] %}
+{% set age = date | nowAge %}
+
+<p class="now-meta">
+  written {{ age }}{% if age != "today" %} ago{% endif %}{% if location %} from {{ location }}{% endif %}
+</p>
 
 <article class="now-content">
 
