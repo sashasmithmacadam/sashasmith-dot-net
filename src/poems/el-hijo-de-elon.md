@@ -27,7 +27,7 @@ conté a mi familia
 
 y mi madre  
 rápidamente  
-dijo: como se nota  
+dijo: cómo se nota  
 que ese niño  
 no es el que  
 cocina  

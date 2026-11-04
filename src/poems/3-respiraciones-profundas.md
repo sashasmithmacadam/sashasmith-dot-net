@@ -53,14 +53,14 @@ ido
 (no está mal esta movida de respirar,  
 igual hago 10)  
 3  
-(que bien sienta esto,  
+(qué bien sienta esto,  
 pero voy a abrir los ojos  
 para ver si ha funcionado…)
 
 pues sí,  
 solucionado.
 
-todo el agua  
+toda el agua  
 se había ido por  
 el desagüe  
 y ya no había  
@@ -90,7 +90,7 @@ esperar.
 es importante recordar,  
 y me escribo  
 este poema  
-como auto-recordatorio,  
+como autorrecordatorio,  
 que tendemos  
 a cagarla  
 cuando actuamos  

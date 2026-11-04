@@ -40,7 +40,7 @@ que cualquier
 trampa de dopamina  
 pueda darme
 
-mi mente ya no lo vuelvo a regalar.
+mi mente ya no la vuelvo a regalar.
 
 no me la quitan ni  
 3 billones anuales  
