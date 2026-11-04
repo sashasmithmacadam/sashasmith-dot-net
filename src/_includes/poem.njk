@@ -29,8 +29,8 @@ layout: base.njk
 
 </article>
 
-{# Pagination: previous/next based on essay collection #}
-{% set poemCollection = collections.poems | sort(attribute="date") %}
+{# Follow the poetry index order, newest to oldest. #}
+{% set poemCollection = collections.poems %}
 
 {% set currentIndex = -1 %}
 {% for i in range(0, poemCollection | length) %}
