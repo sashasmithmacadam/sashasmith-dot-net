@@ -27,7 +27,7 @@ layout: base.njk
 </article>
 
 {# Pagination: previous/next based on essay collection #}
-{% set essayCollection = collections.essays | sort(attribute="order") %}
+{% set essayCollection = collections.essays %}
 
 {% set currentIndex = -1 %}
 {% for i in range(0, essayCollection | length) %}
@@ -40,11 +40,11 @@ layout: base.njk
 {% set next = null %}
 
 {% if currentIndex > 0 %}
-  {% set next = essayCollection[currentIndex - 1] %}
+  {% set previous = essayCollection[currentIndex - 1] %}
 {% endif %}
 
 {% if currentIndex < (essayCollection | length) - 1 %}
-  {% set previous = essayCollection[currentIndex + 1] %}
+  {% set next = essayCollection[currentIndex + 1] %}
 {% endif %}
 
 <hr class="footer-hr">

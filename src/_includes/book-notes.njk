@@ -37,7 +37,7 @@ layout: base.njk
 
 
 {# Pagination #}
-{% set booknotesCollection = collections.booknotes | sort(attribute="dateRead") %}
+{% set booknotesCollection = collections.booknotes %}
 
 {% set currentIndex = -1 %}
 {% for i in range(0, booknotesCollection | length) %}
@@ -50,11 +50,11 @@ layout: base.njk
 {% set next = null %}
 
 {% if currentIndex > 0 %}
-  {% set next = booknotesCollection[currentIndex - 1] %}
+  {% set previous = booknotesCollection[currentIndex - 1] %}
 {% endif %}
 
 {% if currentIndex < (booknotesCollection | length) - 1 %}
-  {% set previous = booknotesCollection[currentIndex + 1] %}
+  {% set next = booknotesCollection[currentIndex + 1] %}
 {% endif %}
 
 <hr class="footer-hr">

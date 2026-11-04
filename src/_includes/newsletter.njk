@@ -20,14 +20,22 @@ layout: base.njk
 <hr class="footer-hr">
 
 {% set currentIndex = -1 %}
-{% for nowItem in collections.newsletter %}
+{% for nowItem in collections.newsletters %}
   {% if nowItem.url == page.url %}
     {% set currentIndex = loop.index0 %}
   {% endif %}
 {% endfor %}
 
-{% set next = collections.newsletter[currentIndex + 1] %}
-{% set previous = collections.newsletter[currentIndex - 1] %}
+{% set previous = null %}
+{% set next = null %}
+{% if currentIndex >= 0 %}
+  {% if currentIndex > 0 %}
+    {% set previous = collections.newsletters[currentIndex - 1] %}
+  {% endif %}
+  {% if currentIndex < (collections.newsletters | length) - 1 %}
+    {% set next = collections.newsletters[currentIndex + 1] %}
+  {% endif %}
+{% endif %}
 
 <nav class="category-footer">
   {% if next %}

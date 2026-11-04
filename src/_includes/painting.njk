@@ -29,7 +29,7 @@ layout: base.njk
 <hr class="footer-hr">
 
 {# Pagination: previous/next based on collection #}
-{% set paintingCollection = collections.paintings | sort(attribute="dateEnded") %}
+{% set paintingCollection = collections.paintings %}
 
 {% set currentIndex = -1 %}
 {% for i in range(0, paintingCollection | length) %}
@@ -42,11 +42,11 @@ layout: base.njk
 {% set next = null %}
 
 {% if currentIndex > 0 %}
-  {% set next = paintingCollection[currentIndex - 1] %}
+  {% set previous = paintingCollection[currentIndex - 1] %}
 {% endif %}
 
 {% if currentIndex < (paintingCollection | length) - 1 %}
-  {% set previous = paintingCollection[currentIndex + 1] %}
+  {% set next = paintingCollection[currentIndex + 1] %}
 {% endif %}
 
 <nav class="category-footer">

@@ -9,7 +9,7 @@ layout: "base.njk"
 </article>
 
 {# Pagination: previous/next based on music collection #}
-{% set musicCollection = collections.music | sort(attribute="date") %}
+{% set musicCollection = collections.music %}
 
 {% set currentIndex = -1 %}
 {% for i in range(0, musicCollection | length) %}

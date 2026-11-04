@@ -9,8 +9,17 @@ layout: "base.njk"
   {% endif %}
 {% endfor %}
 
-{% set previous = collections.now[currentIndex + 1] %}
-{% set next = collections.now[currentIndex - 1] %}
+{% set previous = null %}
+{% set next = null %}
+{% if currentIndex >= 0 %}
+  {% if currentIndex > 0 %}
+    {% set previous = collections.now[currentIndex - 1] %}
+  {% endif %}
+  {% if currentIndex < (collections.now | length) - 1 %}
+    {% set next = collections.now[currentIndex + 1] %}
+  {% endif %}
+{% endif %}
+
 {% set age = date | nowAge %}
 
 <p class="now-meta">
