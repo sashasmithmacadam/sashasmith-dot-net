@@ -297,7 +297,7 @@ Ok, that got a little weird.
 
 I've been with my girlfriend Marta {% yearsSince2015 %} years. We met at one of my concerts — it was her birthday, there's even [video](https://youtu.be/_Ne4KKWkmUI?si=zZOizKaFYXKzcWzx&t=2460) of the moment, we look so young ❤
 
-Three mysterious creatures live with us. We're pretty sure they control us, not the other way around. Meet them:
+<p id="cats">Three mysterious creatures live with us. We're pretty sure they control us, not the other way around. Meet them:</p>
 
 <figure>
     <img src="/assets/images/midnight.jpg" alt="Black cat" width="1000">

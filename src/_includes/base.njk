@@ -254,6 +254,27 @@
             });
         });
 
+        function openAccordionFromHash() {
+            let id;
+            try {
+                id = decodeURIComponent(window.location.hash.slice(1));
+            } catch {
+                return;
+            }
+
+            const target = document.getElementById(id);
+            const item = target?.closest(".accordion-item");
+            if (!item) return;
+
+            item.classList.add("active");
+            item.querySelector(".accordion-toggle").setAttribute("aria-expanded", "true");
+            requestAnimationFrame(() => target.scrollIntoView());
+        }
+
+        openAccordionFromHash();
+        window.addEventListener("hashchange", openAccordionFromHash);
+        window.addEventListener("load", openAccordionFromHash, { once: true });
+
         /* ---------- Lightbox Galleries ---------- */
         const lightbox = document.createElement("div");
         lightbox.className = "lightbox";
